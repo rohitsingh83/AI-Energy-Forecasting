@@ -1,0 +1,18 @@
+{
+  "source_type": "public_measured",
+  "title": "UCI Individual Household Electric Power Consumption",
+  "creators": "Georges Hebrail and Alice Berard",
+  "source_url": "https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption",
+  "doi": "10.24432/C58K54",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "location": "One household in Sceaux, France",
+  "raw_minute_rows": 2075259,
+  "hourly_rows": 34589,
+  "minimum_observed_minutes_per_hour": 54,
+  "archive_sha256": "9f84b46ade8a2d8e1286ec4b2b6c2987a45a755c59f263be3b3b3d10dfbda3ff",
+  "hourly_sha256": "ab04febb691833420044cb47354c8466d1a2f2e0f366bc02eddcef4106f53b3c",
+  "transformation": "Hour-average of Global_active_power (kW); <54 valid minutes => missing.",
+  "timezone": "Original local calendar labels; timezone/DST not reconstructed.",
+  "warning": "Historical single-household benchmark, not current grid or corporate data."
+}

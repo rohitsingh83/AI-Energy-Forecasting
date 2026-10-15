@@ -1,0 +1,95 @@
+{
+  "run_id": "synthetic",
+  "selected_model": "mlp",
+  "selected_model_label": "MLP neural network",
+  "source": {
+    "source_type": "synthetic",
+    "title": "Virtual mixed-use building",
+    "generator": "generate_data.py",
+    "seed": 42,
+    "days": 730,
+    "rows": 17520,
+    "missing_target_rows": 87,
+    "unit": "hour-average kW",
+    "start": "2023-01-01 00:00:00",
+    "end": "2024-12-30 23:00:00",
+    "timezone": "naive simulation clock",
+    "warning": "Generated data. No real building, customer or corporate system.",
+    "input_sha256": "c2f74ee2fa621b55946546a5bc8b655c435b7f3488c83e3d69ce8342549dc59b",
+    "input_file": "energy_data.csv"
+  },
+  "seed": 42,
+  "quick_mode": false,
+  "selection_rule": "Minimum validation day-ahead RMSE, chosen BEFORE test evaluation.",
+  "features": [
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "doy_sin",
+    "doy_cos",
+    "is_weekend",
+    "lag_1",
+    "lag_2",
+    "lag_24",
+    "lag_48",
+    "lag_168",
+    "rolling_mean_24",
+    "rolling_std_24",
+    "rolling_mean_168"
+  ],
+  "splits": {
+    "train": {
+      "rows": 12086,
+      "start": "2023-01-08 00:00:00",
+      "end": "2024-05-28 03:00:00"
+    },
+    "validation": {
+      "rows": 2590,
+      "start": "2024-05-28 04:00:00",
+      "end": "2024-09-13 11:00:00"
+    },
+    "test": {
+      "rows": 2590,
+      "start": "2024-09-13 12:00:00",
+      "end": "2024-12-30 23:00:00"
+    }
+  },
+  "validation_day_ahead": {
+    "n": 336,
+    "mae_kw": 6.313243456649197,
+    "rmse_kw": 8.197445895877603,
+    "r2": 0.9168400577412644,
+    "mape_pct": 6.2769154150440665,
+    "wape_pct": 6.175761145924462
+  },
+  "test_one_step": {
+    "n": 2590,
+    "mae_kw": 5.344160476673637,
+    "rmse_kw": 6.710780296450444,
+    "r2": 0.8308364788013451,
+    "mape_pct": 5.832567827738372,
+    "wape_pct": 5.644477865736464
+  },
+  "test_day_ahead": {
+    "n": 335,
+    "mae_kw": 5.485373913132413,
+    "rmse_kw": 6.887978329402054,
+    "r2": 0.8288172467840778,
+    "mape_pct": 6.093482233560431,
+    "wape_pct": 5.857645747792191
+  },
+  "test_backtest_origins": 14,
+  "test_backtest_horizon": 24,
+  "day_ahead_rmse_improvement_vs_weekly_baseline_pct": 24.005799137384166,
+  "validation_error_radius_kw": 13.662289451468922,
+  "empirical_test_band_coverage_pct": 92.83582089552239,
+  "band_note": "90th percentile absolute validation day-ahead error, pooled across horizons; no guaranteed coverage.",
+  "evaluation_note": "One-step uses arriving actual lags; day-ahead recursively uses its own predictions. Metrics exclude imputed targets.",
+  "limitations": [
+    "Single site / synthetic data cannot establish grid reliability or realized savings.",
+    "Only 14 or fewer daily origins per split, sampled evenly; not every test day.",
+    "No observed future temperature/occupancy is used.",
+    "UTC/DST/holiday/weather integration and drift monitoring need production work."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "scope": "File-viewer-equivalent iframe sandbox=allow-scripts, opaque origin, inline snapshot data",
+  "checks": [
+    "Snapshot loads forecasts without network",
+    "Navigation works without History API permission"
+  ],
+  "browser_errors": []
+}

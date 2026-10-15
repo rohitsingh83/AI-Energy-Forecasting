@@ -1,0 +1,29 @@
+name: Energy forecasting checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install CPU runtime and tests
+        run: python -m pip install -r requirements.txt pytest==9.0.3
+      - name: Syntax checks
+        run: python -m compileall -q src main.py app.py generate_data.py
+      - name: Unit, leakage, API and offline pipeline checks
+        run: python -m pytest -q --junitxml=outputs/ci-tests.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-report-python-${{ matrix.python-version }}
+          path: outputs/ci-tests.xml

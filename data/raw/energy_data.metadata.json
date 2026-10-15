@@ -1,0 +1,14 @@
+{
+  "source_type": "synthetic",
+  "title": "Virtual mixed-use building",
+  "generator": "generate_data.py",
+  "seed": 42,
+  "days": 730,
+  "rows": 17520,
+  "missing_target_rows": 87,
+  "unit": "hour-average kW",
+  "start": "2023-01-01 00:00:00",
+  "end": "2024-12-30 23:00:00",
+  "timezone": "naive simulation clock",
+  "warning": "Generated data. No real building, customer or corporate system."
+}

@@ -1,0 +1,31 @@
+# Environments / credentials (never publish these)
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Python and tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.cache/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Regenerate large/derived artifacts instead of bloating Git history.
+# The downloadable project includes trained bundles for instant demonstration.
+# A fresh Git clone should run python main.py for each desired dataset.
+models/**/*.joblib
+models/**/*.pkl
+data/processed/**/*.csv
+data/raw/*.zip
+data/raw/household_power_consumption.txt
+# Keep small, actual evidence CSV/JSON/PNG files and executed notebooks tracked.
+# Do not add private user data; see DATA_LICENSE.md and SECURITY.md.
+outputs/ci-tests.xml

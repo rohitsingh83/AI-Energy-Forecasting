@@ -1,0 +1,49 @@
+{
+  "label": "HYPOTHETICAL forecast-based 24-hour load-shifting scenario",
+  "settings": {
+    "offpeak_rate": 5.0,
+    "standard_rate": 8.0,
+    "peak_rate": 12.0,
+    "flexible_fraction": 0.1,
+    "carbon_factor_kg_per_kwh": 0.7,
+    "peak_hours": [
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "offpeak_hours": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "window_start": "2024-12-31 00:00:00",
+  "window_end": "2024-12-31 23:00:00",
+  "baseline_energy_kwh": 2543.5288680000003,
+  "shifted_energy_kwh": 2543.5288680000003,
+  "requested_shift_kwh": 62.6505974,
+  "moved_energy_kwh": 62.6505974,
+  "baseline_peak_kw": 131.964377,
+  "shifted_peak_kw": 130.667994,
+  "baseline_cost_inr": 20991.894755,
+  "shifted_cost_inr": 20553.340573200003,
+  "hypothetical_savings_inr": 438.55418179999833,
+  "hypothetical_savings_pct": 2.08915958715704,
+  "baseline_emissions_kg": 1780.4702076,
+  "shifted_emissions_kg": 1780.4702076,
+  "emissions_reduction_kg": 0.0,
+  "assumptions": [
+    "Illustrative INR time-of-use rates; not a real utility tariff or billing quote.",
+    "10% of peak-hour forecast load flexible by default; configurable 0-50%.",
+    "Pre-scheduling/deferral allowed anywhere inside this 24-hour window.",
+    "All shifted load fits original forecast peak headroom; no equipment constraints modeled.",
+    "No demand charges, taxes, rebound, discomfort or forecast error in cost calculation.",
+    "Constant illustrative carbon intensity: shifting preserves energy and does NOT reduce modeled emissions.",
+    "Savings are simulated, not measured or guaranteed."
+  ]
+}

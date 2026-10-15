@@ -1,0 +1,27 @@
+2026-10-15 13:39:33,740 | INFO | DATA | synthetic: 17520 hours; 87 filled; 0 still missing.
+2026-10-15 13:39:34,244 | INFO | SPLIT | train=12086 | validation=2590 | test=2590 | features=15
+2026-10-15 13:39:34,245 | INFO | VALIDATE | Previous-hour baseline
+2026-10-15 13:39:34,356 | INFO | VALIDATION RESULT | previous_hour | one-step RMSE 14.080 | day-ahead RMSE 39.566 kW
+2026-10-15 13:39:34,356 | INFO | VALIDATE | Yesterday baseline
+2026-10-15 13:39:34,466 | INFO | VALIDATION RESULT | same_hour_yesterday | one-step RMSE 11.015 | day-ahead RMSE 11.567 kW
+2026-10-15 13:39:34,466 | INFO | VALIDATE | Last-week baseline
+2026-10-15 13:39:34,577 | INFO | VALIDATION RESULT | same_hour_last_week | one-step RMSE 10.602 | day-ahead RMSE 11.064 kW
+2026-10-15 13:39:34,577 | INFO | VALIDATE | Ridge regression
+2026-10-15 13:39:35,869 | INFO | VALIDATION RESULT | ridge | one-step RMSE 8.361 | day-ahead RMSE 8.683 kW
+2026-10-15 13:39:35,869 | INFO | VALIDATE | Random forest
+2026-10-15 13:39:42,706 | INFO | VALIDATION RESULT | random_forest | one-step RMSE 8.193 | day-ahead RMSE 8.608 kW
+2026-10-15 13:39:42,707 | INFO | VALIDATE | MLP neural network
+2026-10-15 13:39:45,500 | INFO | VALIDATION RESULT | mlp | one-step RMSE 8.009 | day-ahead RMSE 8.197 kW
+2026-10-15 13:39:45,501 | INFO | LOCKED SELECTION | mlp (validation only). Test evaluation starts now.
+2026-10-15 13:39:45,506 | INFO | TEST | refit train+validation then evaluate previous_hour
+2026-10-15 13:39:45,625 | INFO | TEST | refit train+validation then evaluate same_hour_yesterday
+2026-10-15 13:39:45,731 | INFO | TEST | refit train+validation then evaluate same_hour_last_week
+2026-10-15 13:39:45,837 | INFO | TEST | refit train+validation then evaluate ridge
+2026-10-15 13:39:47,187 | INFO | TEST | refit train+validation then evaluate random_forest
+2026-10-15 13:39:55,870 | INFO | TEST | refit train+validation then evaluate mlp
+2026-10-15 13:40:00,383 | INFO | FINAL REFIT | mlp on all 17266 eligible historical rows; reported test scores remain pre-refit.
+2026-10-15 13:40:03,887 | INFO | COMPLETE | mlp | day-ahead RMSE 6.888 kW | R² 0.829 | 29.8s
+2026-10-15 13:40:04,586 | INFO | FORECAST | 24 hours after 2024-12-30 23:00:00 | 2543.53 kWh | peak 131.96 kW
+2026-10-15 13:40:04,594 | INFO | SIMULATION | moved 62.65 kWh | hypothetical savings INR 438.55 | energy conserved; modeled CO2 unchanged.
+2026-10-15 13:40:07,450 | INFO | FIGURES | actual_vs_predicted.png, data_quality.png, energy_history.png, feature_importance.png, forecast.png, model_comparison.png, residual_diagnostics.png, simulation.png, usage_patterns.png
+2026-10-15 13:40:07,450 | INFO | DONE | artifacts: outputs/synthetic | images/synthetic | models/synthetic

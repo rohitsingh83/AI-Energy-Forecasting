@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOLT | AI-Powered Energy Demand Forecasting & SOC Dashboard</title>
+  <meta name="description" content="A production-grade, CPU-friendly energy demand forecasting platform with dual benchmarks (Synthetic Building & UCI Household), 15 past-only domain features, recursive multi-step forecasting, and an interactive decision sandbox.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="navbar">
+    <a href="#overview" class="brand">
+      <div class="brand-icon">⚡</div>
+      <div class="brand-info">
+        <h1>VOLT ENERGY LAB</h1>
+        <span>AI DEMAND FORECASTING SOC</span>
+      </div>
+    </a>
+
+    <div class="status-badge">
+      <div class="pulse-dot"></div>
+      <span>MODEL ENGINE ACTIVE (v1.0.0)</span>
+    </div>
+
+    <ul class="nav-links">
+      <li class="nav-item active" data-page="overview">⚡ Overview</li>
+      <li class="nav-item" data-page="forecast">📈 Forecast Explorer</li>
+      <li class="nav-item" data-page="sandbox">🧪 Decision Sandbox</li>
+      <li class="nav-item" data-page="evidence">🧠 Model Evidence</li>
+      <li class="nav-item" data-page="architecture">📜 Architecture</li>
+      <li class="nav-item" data-page="gallery">📸 Proof Gallery</li>
+      <li class="nav-item" data-page="runbook">💻 Runbook</li>
+    </ul>
+
+    <div class="header-right">
+      <a href="https://github.com/rohitsingh83/AI-Energy-Forecasting" target="_blank" class="btn-repo">
+        <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        GitHub Repo
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Controls Banner -->
+    <div class="controls-banner glass">
+      <div class="dataset-select-group">
+        <span class="dataset-pill" id="dataset-pill">SIMULATED BUILDING</span>
+        <select id="dataset-dropdown" class="dataset-select" aria-label="Select dataset">
+          <option value="synthetic">Virtual Mixed-Use Building (17,520 hours)</option>
+          <option value="uci">UCI Measured Household (34,587 hours)</option>
+        </select>
+      </div>
+      <div class="dataset-meta" id="dataset-provenance">
+        Loading dataset telemetry…
+      </div>
+    </div>
+
+    <!-- KPI Metric Cards Grid -->
+    <section class="kpi-grid">
+      <div class="kpi-card glass" style="--card-color: #10b981;">
+        <div class="kpi-top">
+          <span class="kpi-label">Forecast Demand</span>
+          <span class="kpi-icon">⚡</span>
+        </div>
+        <div class="kpi-value" id="kpi-kwh">—</div>
+        <div class="kpi-footer"><strong>Next 24 Hours</strong> · recursive multi-step</div>
+      </div>
+
+      <div class="kpi-card glass" style="--card-color: #f59e0b;">
+        <div class="kpi-top">
+          <span class="kpi-label">Predicted Peak</span>
+          <span class="kpi-icon">▲</span>
+        </div>
+        <div class="kpi-value" id="kpi-peak">—</div>
+        <div class="kpi-footer">Expected peak at <strong id="kpi-peak-at">—</strong></div>
+      </div>
+
+      <div class="kpi-card glass" style="--card-color: #06b6d4;">
+        <div class="kpi-top">
+          <span class="kpi-label">Day-Ahead Test Error</span>
+          <span class="kpi-icon">≈</span>
+        </div>
+        <div class="kpi-value" id="kpi-rmse">—</div>
+        <div class="kpi-footer"><strong>RMSE</strong> · rolling backtest on test split</div>
+      </div>
+
+      <div class="kpi-card glass" style="--card-color: #38bdf8;">
+        <div class="kpi-top">
+          <span class="kpi-label">Virtual Cost Saving</span>
+          <span class="kpi-icon">₹</span>
+        </div>
+        <div class="kpi-value" id="kpi-saving">—</div>
+        <div class="kpi-footer"><strong id="kpi-saving-pct">—</strong> · 10% load-shifting</div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 1: OVERVIEW & DEMAND OUTLOOK
+         ==================================================================== -->
+    <section class="tab-content active" id="tab-overview">
+      <div class="overview-grid">
+        <!-- Main Demand Outlook Chart -->
+        <div class="chart-card glass">
+          <div class="chart-header">
+            <div>
+              <h2 class="section-title">Demand Outlook & Forecast</h2>
+              <div class="section-sub">48 hours of historical meter context + recursive future forecast with empirical error bounds.</div>
+            </div>
+            <div class="seg-control">
+              <button class="seg-btn active" data-hours="24">24 h</button>
+              <button class="seg-btn" data-hours="48">48 h</button>
+              <button class="seg-btn" data-hours="168">7 Days</button>
+            </div>
+          </div>
+
+          <div class="chart-legend">
+            <div class="legend-item"><i class="swatch"></i> Historical Meter Power</div>
+            <div class="legend-item"><i class="swatch forecast"></i> Model Forecast</div>
+            <div class="legend-item"><i class="swatch band"></i> 90% Empirical Error Band (First 24h)</div>
+          </div>
+
+          <div class="chart-container" id="overview-chart"></div>
+        </div>
+
+        <!-- Planning Brief Side Panel -->
+        <div class="brief-card glass">
+          <div>
+            <div class="brief-eyebrow">✧ Operational Planning Brief</div>
+            <div class="brief-time" id="brief-peak-time">—</div>
+            <div class="brief-date">Next anticipated peak · <span id="brief-peak-date">—</span></div>
+            <div class="brief-divider"></div>
+
+            <div style="font-size:10px;text-transform:uppercase;color:#64748b;font-weight:700;margin-bottom:4px;">Validation Champion</div>
+            <div class="brief-model-tag" id="brief-champion">—</div>
+
+            <p class="brief-desc">
+              Shift flexible peak-hour electrical jobs into low-cost off-peak headroom. Decisions represent a simulated optimization scenario without direct grid control.
+            </p>
+          </div>
+
+          <button class="btn-primary" data-goto="sandbox">
+            Open Decision Sandbox <span>↗</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3 Pillars of Data Rigor -->
+      <div class="pillars-grid">
+        <div class="pillar-card glass">
+          <div class="pillar-num">01 / CAUSAL DATA INTEGRITY</div>
+          <div class="pillar-title">Cleaned & Causally Imputed</div>
+          <div class="pillar-desc">
+            Missing values are forward/causally filled for lag construction. Imputed values are strictly masked out of test evaluation so models are never scored against invented targets.
+          </div>
+        </div>
+
+        <div class="pillar-card glass">
+          <div class="pillar-num">02 / DOMAIN-DRIVEN FEATURES</div>
+          <div class="pillar-title">15 Past-Only Signals</div>
+          <div class="pillar-desc">
+            Constructed without future information: 6 autoregressive lags, 3 rolling statistics shifted by 1h, and 6 cyclic calendar encodings (sine/cosine for hour, day, month).
+          </div>
+          <div class="chips-row">
+            <span class="chip">Lag 1h</span>
+            <span class="chip">Lag 24h</span>
+            <span class="chip">Lag 168h</span>
+            <span class="chip">Rolling 24h</span>
+            <span class="chip">Hour Sin/Cos</span>
+          </div>
+        </div>
+
+        <div class="pillar-card glass">
+          <div class="pillar-num">03 / HONEST EVALUATION</div>
+          <div class="pillar-title">Strict Chronological Split</div>
+          <div class="pillar-desc">
+            70% Train, 15% Validation, 15% Test. Model champion is chosen strictly on Validation day-ahead RMSE. Test split is touched only once for the final report.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 2: FORECAST EXPLORER
+         ==================================================================== -->
+    <section class="tab-content" id="tab-forecast">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Hourly Forecast Explorer</h2>
+          <div class="section-sub" id="forecast-window-label">Predicting recursive demand steps into the future.</div>
+        </div>
+        <div class="seg-control">
+          <button class="seg-btn active" data-hours="24">24 h</button>
+          <button class="seg-btn" data-hours="48">48 h</button>
+          <button class="seg-btn" data-hours="168">7 Days</button>
+        </div>
+      </div>
+
+      <div class="chart-card glass" style="margin-bottom:24px;">
+        <div class="chart-container" id="forecast-chart"></div>
+      </div>
+
+      <div class="chart-card glass">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+          <h3 style="font-size:15px;font-weight:700;">Hourly Predictions & Uncertainty Interval</h3>
+          <button class="btn-repo" onclick="downloadArtifact('forecast_168h.csv')">
+            Download 168h Forecast CSV ↗
+          </button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Lead Time</th>
+                <th>Predicted Power (kW)</th>
+                <th>Energy (kWh)</th>
+                <th>Lower Band (90%)</th>
+                <th>Upper Band (90%)</th>
+              </tr>
+            </thead>
+            <tbody id="forecast-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 3: DECISION SANDBOX (LOAD SHIFTING)
+         ==================================================================== -->
+    <section class="tab-content" id="tab-sandbox">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Decision Sandbox: Virtual Load Shifting</h2>
+          <div class="section-sub">Simulate moving flexible peak demand (17:00–22:00) into off-peak headroom (00:00–06:00).</div>
+        </div>
+      </div>
+
+      <div class="sandbox-layout">
+        <!-- Control Panel -->
+        <div class="control-panel glass">
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:16px;">Scenario Settings</h3>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Flexible Peak Load</span>
+              <strong id="flex-val-label">10%</strong>
+            </div>
+            <input type="range" min="0" max="50" step="1" value="10" id="flex-slider" class="slider-input">
+            <div style="font-size:10px;color:#64748b;margin-top:4px;">Eligible share of peak-hour load to reschedule.</div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="rate-off">Off-Peak Rate (00:00 - 05:59)</label>
+            <input type="number" id="rate-off" class="number-input" value="5" min="0" max="100" step="0.5">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="rate-std">Standard Rate (Daytime hours)</label>
+            <input type="number" id="rate-std" class="number-input" value="8" min="0" max="100" step="0.5">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="rate-peak">Peak Rate (17:00 - 21:59)</label>
+            <input type="number" id="rate-peak" class="number-input" value="12" min="0" max="100" step="0.5">
+          </div>
+
+          <button class="btn-primary" id="btn-run-scenario" style="margin-top:12px;">
+            Run Virtual Scenario ↗
+          </button>
+        </div>
+
+        <!-- Simulation Output -->
+        <div>
+          <div class="sandbox-kpi-row">
+            <div class="kpi-card glass" style="padding:16px;">
+              <div class="kpi-label">Baseline Cost</div>
+              <div class="kpi-value" id="sb-base-cost" style="font-size:24px;">—</div>
+              <div class="kpi-footer">24-hour unshifted forecast</div>
+            </div>
+
+            <div class="kpi-card glass" style="padding:16px;">
+              <div class="kpi-label">Shifted Scenario Cost</div>
+              <div class="kpi-value" id="sb-shifted-cost" style="font-size:24px;">—</div>
+              <div class="kpi-footer">After flexible relocation</div>
+            </div>
+
+            <div class="kpi-card glass" style="padding:16px;--card-color:#10b981;">
+              <div class="kpi-label">Net Hypothetical Saving</div>
+              <div class="kpi-value" id="sb-saving" style="font-size:24px;color:#34d399;">—</div>
+              <div class="kpi-footer" id="sb-saving-pct">—</div>
+            </div>
+          </div>
+
+          <div class="chart-card glass">
+            <div class="chart-header">
+              <div>
+                <h3 style="font-size:14px;font-weight:700;">Load Shifting Simulation (Hourly Profile)</h3>
+                <div class="section-sub">Gray = Original Baseline | Emerald = Optimized Shifted Profile</div>
+              </div>
+            </div>
+            <div class="chart-container" id="scenario-chart"></div>
+          </div>
+
+          <div class="notice-banner" id="sb-conserve-note">
+            <strong>Energy Conserved:</strong> Total energy (kWh) is 100% conserved before and after load shifting.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 4: MODEL EVIDENCE & EVALUATION
+         ==================================================================== -->
+    <section class="tab-content" id="tab-evidence">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Verified Model Evidence & Benchmarks</h2>
+          <div class="section-sub">Transparent validation and test benchmarks across all 6 candidate modeling strategies.</div>
+        </div>
+        <button class="btn-repo" onclick="downloadArtifact('model_comparison.csv')">
+          Export Comparison CSV ↗
+        </button>
+      </div>
+
+      <!-- Evidence KPI Row -->
+      <div class="kpi-grid" style="margin-bottom:20px;">
+        <div class="kpi-card glass" style="padding:16px;">
+          <div class="kpi-label">Day-Ahead RMSE</div>
+          <div class="kpi-value" id="ev-rmse-val" style="font-size:24px;">—</div>
+          <div class="kpi-footer">Test set rolling backtest</div>
+        </div>
+        <div class="kpi-card glass" style="padding:16px;">
+          <div class="kpi-label">Day-Ahead MAE</div>
+          <div class="kpi-value" id="ev-mae-val" style="font-size:24px;">—</div>
+          <div class="kpi-footer">Mean absolute error (kW)</div>
+        </div>
+        <div class="kpi-card glass" style="padding:16px;">
+          <div class="kpi-label">Test 24h R²</div>
+          <div class="kpi-value" id="ev-r2-val" style="font-size:24px;">—</div>
+          <div class="kpi-footer">Coefficient of determination</div>
+        </div>
+        <div class="kpi-card glass" style="padding:16px;--card-color:#10b981;">
+          <div class="kpi-label">Vs Weekly Baseline</div>
+          <div class="kpi-value" id="ev-improv-val" style="font-size:24px;color:#34d399;">—</div>
+          <div class="kpi-footer">RMSE reduction over persistence</div>
+        </div>
+      </div>
+
+      <!-- Candidate Comparison Table -->
+      <div class="chart-card glass" style="margin-bottom:24px;">
+        <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;">Candidate Leaderboard (Chronological Evaluation)</h3>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Candidate Architecture</th>
+                <th>Validation 24h RMSE (kW) ↓</th>
+                <th>Test 24h RMSE (kW) ↓</th>
+                <th>Test 1-Step RMSE (kW) ↓</th>
+                <th>Test 24h R²</th>
+              </tr>
+            </thead>
+            <tbody id="comparison-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Two Evidence Charts -->
+      <div class="two-col-grid">
+        <div class="chart-card glass">
+          <h3 style="font-size:13px;font-weight:700;margin-bottom:4px;">One-Step Test Replay (Last 168h of Test)</h3>
+          <div class="section-sub">Actual lags updated each step · Evaluates single-step predictive capacity</div>
+          <div class="chart-container" id="one-step-chart"></div>
+        </div>
+
+        <div class="chart-card glass">
+          <h3 style="font-size:13px;font-weight:700;margin-bottom:4px;">Day-Ahead 24h Backtest Origin</h3>
+          <div class="section-sub">True recursive forecast without future updates inside the 24h window</div>
+          <div class="chart-container" id="day-ahead-chart"></div>
+        </div>
+      </div>
+
+      <div class="chart-card glass" style="margin-top:20px;">
+        <h3 style="font-size:13px;font-weight:700;margin-bottom:4px;">Error Progression by Lead Time (RMSE vs Hours Ahead)</h3>
+        <div class="section-sub">Shows how error grows recursively from +1h to +24h across 14 test origins</div>
+        <div class="chart-container" id="horizon-chart"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 5: ARCHITECTURE & METHODOLOGY
+         ==================================================================== -->
+    <section class="tab-content" id="tab-architecture">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">System Architecture & Engineering Pipeline</h2>
+          <div class="section-sub">End-to-end design from raw meter ingestion to decision optimization.</div>
+        </div>
+      </div>
+
+      <div class="chart-card glass" style="margin-bottom:24px;">
+        <h3 style="font-size:14px;font-weight:700;margin-bottom:14px;">End-to-End Forecasting Pipeline</h3>
+        <div class="codebox">
+[RAW TELEMETRY]
+  ├── Synthetic Building (17,520 hours)
+  └── UCI Household #235 (2,075,259 raw minutes aggregated to 34,587 clean hours)
+          │
+          ▼
+[CAUSAL PREPROCESSING]
+  ├── Data validation & missingness masks
+  ├── Forward/causal gap filling for uninterrupted lag generation
+  └── Strict masking: Imputed rows are never included in test scores
+          │
+          ▼
+[15 DOMAIN-DRIVEN FEATURES (PAST-ONLY)]
+  ├── Autoregressive Lags:  lag_1, lag_2, lag_3, lag_24, lag_48, lag_168
+  ├── Rolling Statistics:   rolling_mean_24h, rolling_std_24h, rolling_mean_168h (all shifted by 1)
+  └── Cyclic Calendar:      sin/cos encodings for hour_of_day, day_of_week, month_of_year
+          │
+          ▼
+[CHRONOLOGICAL SPLIT (70% / 15% / 15%)]
+  ├── Train Split:      Fit estimators on historical data
+  ├── Validation Split: Model champion selection based strictly on 24h RMSE
+  └── Test Split:       One-time honest holdout reporting (No leakage)
+          │
+          ▼
+[RECURSIVE MULTI-STEP ENGINE & DECISION SANDBOX]
+  ├── Step-by-step recursive rollouts for 24h, 48h, 168h horizons
+  ├── Empirical 90th percentile uncertainty band estimation
+  └── Time-of-Use load shifting optimization (conserved total energy)
+        </div>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card glass">
+          <div class="pillar-num">HONEST DISCLOSURE 01</div>
+          <div class="pillar-title">Energy-Conserving Physics</div>
+          <div class="pillar-desc">
+            Load shifting moves energy; it does not eliminate it. Under standard constant grid carbon factor assumptions, modeled emissions reduction is exactly 0 kg. We do not invent unrealistic ESG metrics.
+          </div>
+        </div>
+
+        <div class="pillar-card glass">
+          <div class="pillar-num">HONEST DISCLOSURE 02</div>
+          <div class="pillar-title">Validation Champion Selection</div>
+          <div class="pillar-desc">
+            The winning model is selected purely based on Validation 24-hour RMSE. The Test split is never used to select models or tune hyperparameters, avoiding data snooping bias.
+          </div>
+        </div>
+
+        <div class="pillar-card glass">
+          <div class="pillar-num">HONEST DISCLOSURE 03</div>
+          <div class="pillar-title">Separate Tasks</div>
+          <div class="pillar-desc">
+            Synthetic building forecasting (large commercial profile, R² 0.83) and UCI household forecasting (single volatile family residence, R² 0.57) are distinct tasks with different signal-to-noise ratios.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 6: SCREENSHOT PROOF & ASSET GALLERY (NEW)
+         ==================================================================== -->
+    <section class="tab-content" id="tab-gallery">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Visual Proof & Screenshot Gallery</h2>
+          <div class="section-sub">High-resolution captures of datasets, training runs, terminal logs, benchmarks, and UI consoles. Click any image to view full size.</div>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- 01 -->
+        <div class="gallery-card glass" data-src="screenshots/01-dataset-preview.png">
+          <div class="gallery-thumb-wrap">
+            <img src="screenshots/01-dataset-preview.png" class="gallery-thumb" alt="Dataset Preview" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <div>
+              <div class="gallery-badge">PROOF 01 / DATASET</div>
+              <div class="gallery-title">Dataset Provenance & Schema Audit</div>
+              <div class="gallery-desc">Synthetic building & UCI household telemetry, column distributions, and causal imputation audit.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="gallery-card glass" data-src="screenshots/02-training-logs.png">
+          <div class="gallery-thumb-wrap">
+            <img src="screenshots/02-training-logs.png" class="gallery-thumb" alt="Training Logs" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <div>
+              <div class="gallery-badge">PROOF 02 / PIPELINE</div>
+              <div class="gallery-title">Execution Logs & Model Training</div>
+              <div class="gallery-desc">Clean terminal output from training 6 candidate models across both datasets with execution timings.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="gallery-card glass" data-src="screenshots/03-metrics-tables.png">
+          <div class="gallery-thumb-wrap">
+            <img src="screenshots/03-metrics-tables.png" class="gallery-thumb" alt="Metrics Tables" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <div>
+              <div class="gallery-badge">PROOF 03 / METRICS</div>
+              <div class="gallery-title">Model Candidate Leaderboard</div>
+              <div class="gallery-desc">Comprehensive comparison table comparing MLP, Random Forest, Ridge, and 3 baseline strategies.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="gallery-card glass" data-src="screenshots/04-forecast-explorer.png">
+          <div class="gallery-thumb-wrap">
+            <img src="screenshots/04-forecast-explorer.png" class="gallery-thumb" alt="Forecast Explorer" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <div>
+              <div class="gallery-badge">PROOF 04 / FORECAST</div>
+              <div class="gallery-title">72-Hour Recursive Forecast Curve</div>
+              <div class="gallery-desc">High-resolution plot showing future demand trajectory and empirical 90th percentile uncertainty band.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="gallery-card glass" data-src="screenshots/05-decision-sandbox.png">
+          <div class="gallery-thumb-wrap">
+            <img src="screenshots/05-decision-sandbox.png" class="gallery-thumb" alt="Decision Sandbox" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <div>
+              <div class="gallery-badge">PROOF 05 / SANDBOX</div>
+              <div class="gallery-title">Decision Sandbox Load Shifting</div>
+              <div class="gallery-desc">Simulated peak shaving and valley filling profile with Time-of-Use tariff rate schedules.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 -->
+        <div class="gallery-card glass" data-src="screenshots/06-dashboard-live.png">
+          <div class="gallery-thumb-wrap">
+            <img src="screenshots/06-dashboard-live.png" class="gallery-thumb" alt="Live Dashboard" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <div>
+              <div class="gallery-badge">PROOF 06 / SOC CONSOLE</div>
+              <div class="gallery-title">Live SOC Dashboard Console</div>
+              <div class="gallery-desc">Complete full-page view of the live energy management and forecasting operations dashboard.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 07 -->
+        <div class="gallery-card glass" data-src="screenshots/07-day-ahead-backtest.png">
+          <div class="gallery-thumb-wrap">
+            <img src="screenshots/07-day-ahead-backtest.png" class="gallery-thumb" alt="Day-Ahead Backtest" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <div>
+              <div class="gallery-badge">PROOF 07 / BACKTEST</div>
+              <div class="gallery-title">Rolling Day-Ahead Backtest</div>
+              <div class="gallery-desc">Predictions vs actual meter readings across 14 sampled 24-hour test origins on untouched data.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 08 -->
+        <div class="gallery-card glass" data-src="screenshots/08-uci-benchmark-view.png">
+          <div class="gallery-thumb-wrap">
+            <img src="screenshots/08-uci-benchmark-view.png" class="gallery-thumb" alt="UCI Benchmark View" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <div>
+              <div class="gallery-badge">PROOF 08 / REAL DATA</div>
+              <div class="gallery-title">UCI Household Benchmark View</div>
+              <div class="gallery-desc">Real French household electrical telemetry run with Random Forest champion evaluation.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 09 -->
+        <div class="gallery-card glass" data-src="screenshots/09-project-runbook-tests.png">
+          <div class="gallery-thumb-wrap">
+            <img src="screenshots/09-project-runbook-tests.png" class="gallery-thumb" alt="Test Passes" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <div>
+              <div class="gallery-badge">PROOF 09 / TESTS</div>
+              <div class="gallery-title">Automated Tests & Integrity Suite</div>
+              <div class="gallery-desc">67/67 passing pytest unit and API tests, and 29/29 artifact provenance integrity verification checks.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="gallery-card glass" data-src="screenshots/10-github-repo.png">
+          <div class="gallery-thumb-wrap">
+            <img src="screenshots/10-github-repo.png" class="gallery-thumb" alt="GitHub Repository" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <div>
+              <div class="gallery-badge">PROOF 10 / GITHUB</div>
+              <div class="gallery-title">GitHub Repository Landing Page</div>
+              <div class="gallery-desc">Overview of repository setup, tags, branch structure, documentation guides, and README layout.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 7: PROJECT RUNBOOK & ARTIFACTS
+         ==================================================================== -->
+    <section class="tab-content" id="tab-runbook">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Project Runbook & Downloadable Artifacts</h2>
+          <div class="section-sub">Reproduce every experiment on any standard CPU machine in under 2 minutes.</div>
+        </div>
+      </div>
+
+      <div class="sandbox-layout">
+        <div class="chart-card glass">
+          <h3 style="font-size:14px;font-weight:700;">Terminal Commands to Rebuild</h3>
+          <div class="codebox">
+<span class="code-comment"># 1. Activate virtual environment & install dependencies</span>
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1  <span class="code-comment"># or source .venv/bin/activate</span>
+pip install -r requirements.txt
+
+<span class="code-comment"># 2. Run synthetic building experiment</span>
+python main.py --dataset synthetic
+
+<span class="code-comment"># 3. Run UCI real household experiment</span>
+python main.py --dataset uci
+
+<span class="code-comment"># 4. Run automated test suite (67 tests)</span>
+python -m pytest -q
+
+<span class="code-comment"># 5. Verify artifact provenance (29 checks)</span>
+python scripts/validate_project.py
+
+<span class="code-comment"># 6. Start live Flask SOC server</span>
+python app.py
+          </div>
+        </div>
+
+        <div class="chart-card glass">
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;">Machine-Readable Artifacts</h3>
+          <div class="artifact-grid">
+            <a href="#" class="artifact-btn" onclick="downloadArtifact('metrics.json');return false;">
+              <span>Metrics JSON</span> <span>↗</span>
+            </a>
+            <a href="#" class="artifact-btn" onclick="downloadArtifact('forecast_168h.csv');return false;">
+              <span>168h Forecast CSV</span> <span>↗</span>
+            </a>
+            <a href="#" class="artifact-btn" onclick="downloadArtifact('model_comparison.csv');return false;">
+              <span>Model Comparison CSV</span> <span>↗</span>
+            </a>
+            <a href="#" class="artifact-btn" onclick="downloadArtifact('simulation.json');return false;">
+              <span>Simulation JSON</span> <span>↗</span>
+            </a>
+          </div>
+
+          <div class="notice-banner" style="margin-top:20px;">
+            <strong>Portfolio Proof of Work:</strong> Created by Rohit Singh for student placement and engineering evaluation. Public datasets (UCI CC BY 4.0 & Seeded Synthetic Building).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div>
+        <strong>VOLT ENERGY FORECASTING LAB</strong> &nbsp;·&nbsp; Python 3.11+ · Scikit-Learn · Flask · Vanilla CSS & JS
+      </div>
+      <div>
+        Historical meter replay · Transparent simulation · No live grid control
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Lightbox Modal for Screenshots -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close">&times;</button>
+      <img src="" id="lightbox-img" class="lightbox-img" alt="Enlarged screenshot">
+      <div class="lightbox-bar">
+        <div>
+          <h3 id="lightbox-title" style="font-size:15px;color:#fff;margin-bottom:4px;">Screenshot Title</h3>
+          <p id="lightbox-desc" style="font-size:12px;color:#94a3b8;margin:0;">Screenshot description</p>
+        </div>
+        <a id="lightbox-link" href="#" target="_blank" class="btn-repo" style="margin:0;">Open Full Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Bundle for Static Offline / GitHub Pages Execution -->
+  <script src="data.js"></script>
+  <!-- Interactive Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

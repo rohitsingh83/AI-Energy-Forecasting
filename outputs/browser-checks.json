@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "Overview renders with model forecast",
+      "passed": true
+    },
+    {
+      "check": "48-hour explorer and table update",
+      "passed": true
+    },
+    {
+      "check": "Scenario recalculates after slider change",
+      "passed": true
+    },
+    {
+      "check": "Six candidate rows visible",
+      "passed": true
+    },
+    {
+      "check": "Switch to real UCI benchmark",
+      "passed": true
+    },
+    {
+      "check": "Forecast CSV downloads",
+      "passed": true
+    },
+    {
+      "check": "Mobile layout has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "check": "Standalone HTML works without server/network",
+      "passed": true
+    },
+    {
+      "check": "Offline scenario remains interactive",
+      "passed": true
+    },
+    {
+      "check": "No browser JavaScript exceptions",
+      "passed": true
+    }
+  ],
+  "browser_errors": [],
+  "note": "Genuine browser smoke checks; screenshots are captures of this app, not generated mockups."
+}

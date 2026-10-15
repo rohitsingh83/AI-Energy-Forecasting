@@ -1,0 +1,153 @@
+{
+  "checked_at_utc": "2026-10-15T16:23:23.612696+00:00",
+  "passed": true,
+  "total_checks": 29,
+  "checks": [
+    {
+      "run": "project",
+      "check": "Dashboard renders",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Raw input SHA256 matches run",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Champion chosen by validation only",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Stored one_step RMSE matches saved predictions",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Stored one_step sample count matches observations",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Stored day_ahead RMSE matches saved predictions",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Stored day_ahead sample count matches observations",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Future begins exactly after cutoff",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "168 nonnegative finite hourly forecasts",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "No band beyond validated 24-hour horizon",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Simulation conserves energy",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Simulation respects original forecast peak",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "No invented carbon benefit from shifting",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Saved model serves valid JSON",
+      "passed": true
+    },
+    {
+      "run": "synthetic",
+      "check": "Nine evidence figures exist",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Raw input SHA256 matches run",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Champion chosen by validation only",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Stored one_step RMSE matches saved predictions",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Stored one_step sample count matches observations",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Stored day_ahead RMSE matches saved predictions",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Stored day_ahead sample count matches observations",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Future begins exactly after cutoff",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "168 nonnegative finite hourly forecasts",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "No band beyond validated 24-hour horizon",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Simulation conserves energy",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Simulation respects original forecast peak",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "No invented carbon benefit from shifting",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Saved model serves valid JSON",
+      "passed": true
+    },
+    {
+      "run": "uci",
+      "check": "Nine evidence figures exist",
+      "passed": true
+    }
+  ],
+  "scope": "Artifact/provenance checks. Automated unit/API tests and browser checks are reported separately."
+}

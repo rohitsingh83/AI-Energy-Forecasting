@@ -1,0 +1,33 @@
+{
+  "input_rows": 17520,
+  "hourly_rows": 17520,
+  "start": "2023-01-01 00:00:00",
+  "end": "2024-12-30 23:00:00",
+  "duplicate_timestamps_aggregated": 0,
+  "invalid_power_readings": 0,
+  "missing_target_hours_before_fill": 87,
+  "imputed_target_hours": 87,
+  "remaining_missing_target_hours": 0,
+  "max_causal_forward_fill_hours": 3,
+  "observed_target_hours": 17433,
+  "fill_policy": "Past-only forward-fill <=3 hours; no interpolation/backfill; imputed targets not scored.",
+  "unit": "hour-average kW; hourly kWh = kW x 1 h",
+  "dataset": "synthetic",
+  "run_id": "synthetic",
+  "source": {
+    "source_type": "synthetic",
+    "title": "Virtual mixed-use building",
+    "generator": "generate_data.py",
+    "seed": 42,
+    "days": 730,
+    "rows": 17520,
+    "missing_target_rows": 87,
+    "unit": "hour-average kW",
+    "start": "2023-01-01 00:00:00",
+    "end": "2024-12-30 23:00:00",
+    "timezone": "naive simulation clock",
+    "warning": "Generated data. No real building, customer or corporate system.",
+    "input_sha256": "c2f74ee2fa621b55946546a5bc8b655c435b7f3488c83e3d69ce8342549dc59b",
+    "input_file": "energy_data.csv"
+  }
+}

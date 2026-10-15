@@ -1,0 +1,30 @@
+{
+  "run_id": "synthetic",
+  "model": "mlp",
+  "cutoff": "2024-12-30 23:00:00",
+  "forecast_start": "2024-12-31 00:00:00",
+  "forecast_end": "2024-12-31 23:00:00",
+  "hours": 24,
+  "total_kwh": 2543.52886829057,
+  "peak_kw": 131.9643768324111,
+  "peak_time": "2024-12-31 19:00:00",
+  "band_label": "Pooled 90th percentile of absolute validation 24-hour backtest errors; empirical, not guaranteed.",
+  "band_available_through_horizon": 24,
+  "warning": "No future actuals exist in this forecast. Beyond 24 h is exploratory and has no error band.",
+  "source": {
+    "source_type": "synthetic",
+    "title": "Virtual mixed-use building",
+    "generator": "generate_data.py",
+    "seed": 42,
+    "days": 730,
+    "rows": 17520,
+    "missing_target_rows": 87,
+    "unit": "hour-average kW",
+    "start": "2023-01-01 00:00:00",
+    "end": "2024-12-30 23:00:00",
+    "timezone": "naive simulation clock",
+    "warning": "Generated data. No real building, customer or corporate system.",
+    "input_sha256": "c2f74ee2fa621b55946546a5bc8b655c435b7f3488c83e3d69ce8342549dc59b",
+    "input_file": "energy_data.csv"
+  }
+}

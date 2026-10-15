@@ -1,0 +1,1170 @@
+{
+  "synthetic": {
+    "forecast_request": {
+      "method": "POST",
+      "path": "/predict",
+      "body": {
+        "dataset": "synthetic",
+        "hours": 24
+      }
+    },
+    "forecast_response": {
+      "dataset": "synthetic",
+      "model": "mlp",
+      "cutoff": "2024-12-30 23:00:00",
+      "hours": 24,
+      "unit": "kW (hour-average); kWh for each one-hour interval",
+      "total_kwh": 2543.52886829057,
+      "peak_kw": 131.9643768324111,
+      "peak_time": "2024-12-31 19:00:00",
+      "band_note": "Empirical validation error band; only first 24 h, not guaranteed coverage.",
+      "source_type": "synthetic",
+      "predictions": [
+        {
+          "Datetime": "2024-12-31 00:00:00",
+          "horizon": 1,
+          "predicted_kw": 104.11645824630463,
+          "predicted_kwh": 104.11645824630463,
+          "lower_kw": 90.45416879483571,
+          "upper_kw": 117.77874769777355
+        },
+        {
+          "Datetime": "2024-12-31 01:00:00",
+          "horizon": 2,
+          "predicted_kw": 101.94250317061203,
+          "predicted_kwh": 101.94250317061203,
+          "lower_kw": 88.2802137191431,
+          "upper_kw": 115.60479262208095
+        },
+        {
+          "Datetime": "2024-12-31 02:00:00",
+          "horizon": 3,
+          "predicted_kw": 102.83279061450742,
+          "predicted_kwh": 102.83279061450742,
+          "lower_kw": 89.1705011630385,
+          "upper_kw": 116.49508006597634
+        },
+        {
+          "Datetime": "2024-12-31 03:00:00",
+          "horizon": 4,
+          "predicted_kw": 102.73833961186081,
+          "predicted_kwh": 102.73833961186081,
+          "lower_kw": 89.07605016039189,
+          "upper_kw": 116.40062906332973
+        },
+        {
+          "Datetime": "2024-12-31 04:00:00",
+          "horizon": 5,
+          "predicted_kw": 102.76183646734236,
+          "predicted_kwh": 102.76183646734236,
+          "lower_kw": 89.09954701587344,
+          "upper_kw": 116.42412591881128
+        },
+        {
+          "Datetime": "2024-12-31 05:00:00",
+          "horizon": 6,
+          "predicted_kw": 106.39476674669858,
+          "predicted_kwh": 106.39476674669858,
+          "lower_kw": 92.73247729522966,
+          "upper_kw": 120.0570561981675
+        },
+        {
+          "Datetime": "2024-12-31 06:00:00",
+          "horizon": 7,
+          "predicted_kw": 111.23153508614297,
+          "predicted_kwh": 111.23153508614297,
+          "lower_kw": 97.56924563467405,
+          "upper_kw": 124.89382453761189
+        },
+        {
+          "Datetime": "2024-12-31 07:00:00",
+          "horizon": 8,
+          "predicted_kw": 120.11284863872841,
+          "predicted_kwh": 120.11284863872841,
+          "lower_kw": 106.45055918725949,
+          "upper_kw": 133.77513809019734
+        },
+        {
+          "Datetime": "2024-12-31 08:00:00",
+          "horizon": 9,
+          "predicted_kw": 130.6679938924169,
+          "predicted_kwh": 130.6679938924169,
+          "lower_kw": 117.00570444094797,
+          "upper_kw": 144.3302833438858
+        },
+        {
+          "Datetime": "2024-12-31 09:00:00",
+          "horizon": 10,
+          "predicted_kw": 115.9569770804477,
+          "predicted_kwh": 115.9569770804477,
+          "lower_kw": 102.29468762897878,
+          "upper_kw": 129.61926653191662
+        },
+        {
+          "Datetime": "2024-12-31 10:00:00",
+          "horizon": 11,
+          "predicted_kw": 101.26753270907885,
+          "predicted_kwh": 101.26753270907885,
+          "lower_kw": 87.60524325760993,
+          "upper_kw": 114.92982216054777
+        },
+        {
+          "Datetime": "2024-12-31 11:00:00",
+          "horizon": 12,
+          "predicted_kw": 87.29984990939164,
+          "predicted_kwh": 87.29984990939164,
+          "lower_kw": 73.63756045792272,
+          "upper_kw": 100.96213936086056
+        },
+        {
+          "Datetime": "2024-12-31 12:00:00",
+          "horizon": 13,
+          "predicted_kw": 79.27531490855921,
+          "predicted_kwh": 79.27531490855921,
+          "lower_kw": 65.61302545709029,
+          "upper_kw": 92.93760436002813
+        },
+        {
+          "Datetime": "2024-12-31 13:00:00",
+          "horizon": 14,
+          "predicted_kw": 75.57345314878664,
+          "predicted_kwh": 75.57345314878664,
+          "lower_kw": 61.91116369731772,
+          "upper_kw": 89.23574260025556
+        },
+        {
+          "Datetime": "2024-12-31 14:00:00",
+          "horizon": 15,
+          "predicted_kw": 75.7060583086147,
+          "predicted_kwh": 75.7060583086147,
+          "lower_kw": 62.04376885714578,
+          "upper_kw": 89.36834776008362
+        },
+        {
+          "Datetime": "2024-12-31 15:00:00",
+          "horizon": 16,
+          "predicted_kw": 83.68631074831124,
+          "predicted_kwh": 83.68631074831124,
+          "lower_kw": 70.02402129684232,
+          "upper_kw": 97.34860019978017
+        },
+        {
+          "Datetime": "2024-12-31 16:00:00",
+          "horizon": 17,
+          "predicted_kw": 96.22942324295748,
+          "predicted_kwh": 96.22942324295748,
+          "lower_kw": 82.56713379148856,
+          "upper_kw": 109.8917126944264
+        },
+        {
+          "Datetime": "2024-12-31 17:00:00",
+          "horizon": 18,
+          "predicted_kw": 114.79430944254169,
+          "predicted_kwh": 114.79430944254169,
+          "lower_kw": 101.13201999107277,
+          "upper_kw": 128.4565988940106
+        },
+        {
+          "Datetime": "2024-12-31 18:00:00",
+          "horizon": 19,
+          "predicted_kw": 127.4099134322845,
+          "predicted_kwh": 127.4099134322845,
+          "lower_kw": 113.74762398081558,
+          "upper_kw": 141.07220288375342
+        },
+        {
+          "Datetime": "2024-12-31 19:00:00",
+          "horizon": 20,
+          "predicted_kw": 131.9643768324111,
+          "predicted_kwh": 131.9643768324111,
+          "lower_kw": 118.30208738094217,
+          "upper_kw": 145.62666628388
+        },
+        {
+          "Datetime": "2024-12-31 20:00:00",
+          "horizon": 21,
+          "predicted_kw": 130.50619148247225,
+          "predicted_kwh": 130.50619148247225,
+          "lower_kw": 116.84390203100332,
+          "upper_kw": 144.16848093394117
+        },
+        {
+          "Datetime": "2024-12-31 21:00:00",
+          "horizon": 22,
+          "predicted_kw": 121.8311838237691,
+          "predicted_kwh": 121.8311838237691,
+          "lower_kw": 108.16889437230017,
+          "upper_kw": 135.49347327523802
+        },
+        {
+          "Datetime": "2024-12-31 22:00:00",
+          "horizon": 23,
+          "predicted_kw": 111.14717523352235,
+          "predicted_kwh": 111.14717523352235,
+          "lower_kw": 97.48488578205342,
+          "upper_kw": 124.80946468499127
+        },
+        {
+          "Datetime": "2024-12-31 23:00:00",
+          "horizon": 24,
+          "predicted_kw": 108.08172551280728,
+          "predicted_kwh": 108.08172551280728,
+          "lower_kw": 94.41943606133836,
+          "upper_kw": 121.7440149642762
+        }
+      ]
+    },
+    "simulation_response": {
+      "dataset": "synthetic",
+      "result": {
+        "label": "HYPOTHETICAL forecast-based 24-hour load-shifting scenario",
+        "settings": {
+          "offpeak_rate": 5.0,
+          "standard_rate": 8.0,
+          "peak_rate": 12.0,
+          "flexible_fraction": 0.1,
+          "carbon_factor_kg_per_kwh": 0.7,
+          "peak_hours": [
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "offpeak_hours": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "window_start": "2024-12-31 00:00:00",
+        "window_end": "2024-12-31 23:00:00",
+        "baseline_energy_kwh": 2543.52886829057,
+        "shifted_energy_kwh": 2543.52886829057,
+        "requested_shift_kwh": 62.65059750134787,
+        "moved_energy_kwh": 62.65059750134787,
+        "baseline_peak_kw": 131.9643768324111,
+        "shifted_peak_kw": 130.6679938924169,
+        "baseline_cost_inr": 20991.894761806496,
+        "shifted_cost_inr": 20553.34057929706,
+        "hypothetical_savings_inr": 438.55418250943694,
+        "hypothetical_savings_pct": 2.0891595898592263,
+        "baseline_emissions_kg": 1780.4702078033988,
+        "shifted_emissions_kg": 1780.4702078033988,
+        "emissions_reduction_kg": 0.0,
+        "assumptions": [
+          "Illustrative INR time-of-use rates; not a real utility tariff or billing quote.",
+          "10% of peak-hour forecast load flexible by default; configurable 0-50%.",
+          "Pre-scheduling/deferral allowed anywhere inside this 24-hour window.",
+          "All shifted load fits original forecast peak headroom; no equipment constraints modeled.",
+          "No demand charges, taxes, rebound, discomfort or forecast error in cost calculation.",
+          "Constant illustrative carbon intensity: shifting preserves energy and does NOT reduce modeled emissions.",
+          "Savings are simulated, not measured or guaranteed."
+        ]
+      },
+      "hourly": [
+        {
+          "Datetime": "2024-12-31 00:00:00",
+          "horizon": 1,
+          "predicted_kw": 104.11645824630463,
+          "predicted_kwh": 104.11645824630463,
+          "lower_kw": 90.45416879483571,
+          "upper_kw": 117.77874769777355,
+          "baseline_kw": 104.11645824630463,
+          "shifted_kw": 114.31934225356129,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 520.5822912315232,
+          "shifted_cost_inr": 571.5967112678064
+        },
+        {
+          "Datetime": "2024-12-31 01:00:00",
+          "horizon": 2,
+          "predicted_kw": 101.94250317061203,
+          "predicted_kwh": 101.94250317061203,
+          "lower_kw": 88.2802137191431,
+          "upper_kw": 115.60479262208095,
+          "baseline_kw": 101.94250317061203,
+          "shifted_kw": 112.94187799658806,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 509.71251585306015,
+          "shifted_cost_inr": 564.7093899829404
+        },
+        {
+          "Datetime": "2024-12-31 02:00:00",
+          "horizon": 3,
+          "predicted_kw": 102.83279061450742,
+          "predicted_kwh": 102.83279061450742,
+          "lower_kw": 89.1705011630385,
+          "upper_kw": 116.49508006597634,
+          "baseline_kw": 102.83279061450742,
+          "shifted_kw": 113.50598309062146,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 514.1639530725371,
+          "shifted_cost_inr": 567.5299154531073
+        },
+        {
+          "Datetime": "2024-12-31 03:00:00",
+          "horizon": 4,
+          "predicted_kw": 102.73833961186081,
+          "predicted_kwh": 102.73833961186081,
+          "lower_kw": 89.07605016039189,
+          "upper_kw": 116.40062906332973,
+          "baseline_kw": 102.73833961186081,
+          "shifted_kw": 113.446136922853,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 513.691698059304,
+          "shifted_cost_inr": 567.230684614265
+        },
+        {
+          "Datetime": "2024-12-31 04:00:00",
+          "horizon": 5,
+          "predicted_kw": 102.76183646734236,
+          "predicted_kwh": 102.76183646734236,
+          "lower_kw": 89.09954701587344,
+          "upper_kw": 116.42412591881128,
+          "baseline_kw": 102.76183646734236,
+          "shifted_kw": 113.4610250311396,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 513.8091823367118,
+          "shifted_cost_inr": 567.305125155698
+        },
+        {
+          "Datetime": "2024-12-31 05:00:00",
+          "horizon": 6,
+          "predicted_kw": 106.39476674669858,
+          "predicted_kwh": 106.39476674669858,
+          "lower_kw": 92.73247729522966,
+          "upper_kw": 120.0570561981675,
+          "baseline_kw": 106.39476674669858,
+          "shifted_kw": 115.76292706391028,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 531.9738337334929,
+          "shifted_cost_inr": 578.8146353195514
+        },
+        {
+          "Datetime": "2024-12-31 06:00:00",
+          "horizon": 7,
+          "predicted_kw": 111.23153508614297,
+          "predicted_kwh": 111.23153508614297,
+          "lower_kw": 97.56924563467405,
+          "upper_kw": 124.89382453761189,
+          "baseline_kw": 111.23153508614297,
+          "shifted_kw": 111.23153508614297,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 889.8522806891438,
+          "shifted_cost_inr": 889.8522806891438
+        },
+        {
+          "Datetime": "2024-12-31 07:00:00",
+          "horizon": 8,
+          "predicted_kw": 120.11284863872841,
+          "predicted_kwh": 120.11284863872841,
+          "lower_kw": 106.45055918725949,
+          "upper_kw": 133.77513809019734,
+          "baseline_kw": 120.11284863872841,
+          "shifted_kw": 120.11284863872841,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 960.9027891098273,
+          "shifted_cost_inr": 960.9027891098273
+        },
+        {
+          "Datetime": "2024-12-31 08:00:00",
+          "horizon": 9,
+          "predicted_kw": 130.6679938924169,
+          "predicted_kwh": 130.6679938924169,
+          "lower_kw": 117.00570444094797,
+          "upper_kw": 144.3302833438858,
+          "baseline_kw": 130.6679938924169,
+          "shifted_kw": 130.6679938924169,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 1045.343951139335,
+          "shifted_cost_inr": 1045.343951139335
+        },
+        {
+          "Datetime": "2024-12-31 09:00:00",
+          "horizon": 10,
+          "predicted_kw": 115.9569770804477,
+          "predicted_kwh": 115.9569770804477,
+          "lower_kw": 102.29468762897878,
+          "upper_kw": 129.61926653191662,
+          "baseline_kw": 115.9569770804477,
+          "shifted_kw": 115.9569770804477,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 927.6558166435816,
+          "shifted_cost_inr": 927.6558166435816
+        },
+        {
+          "Datetime": "2024-12-31 10:00:00",
+          "horizon": 11,
+          "predicted_kw": 101.26753270907885,
+          "predicted_kwh": 101.26753270907885,
+          "lower_kw": 87.60524325760993,
+          "upper_kw": 114.92982216054777,
+          "baseline_kw": 101.26753270907885,
+          "shifted_kw": 101.26753270907885,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 810.1402616726308,
+          "shifted_cost_inr": 810.1402616726308
+        },
+        {
+          "Datetime": "2024-12-31 11:00:00",
+          "horizon": 12,
+          "predicted_kw": 87.29984990939164,
+          "predicted_kwh": 87.29984990939164,
+          "lower_kw": 73.63756045792272,
+          "upper_kw": 100.96213936086056,
+          "baseline_kw": 87.29984990939164,
+          "shifted_kw": 87.29984990939164,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 698.3987992751331,
+          "shifted_cost_inr": 698.3987992751331
+        },
+        {
+          "Datetime": "2024-12-31 12:00:00",
+          "horizon": 13,
+          "predicted_kw": 79.27531490855921,
+          "predicted_kwh": 79.27531490855921,
+          "lower_kw": 65.61302545709029,
+          "upper_kw": 92.93760436002813,
+          "baseline_kw": 79.27531490855921,
+          "shifted_kw": 79.27531490855921,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 634.2025192684737,
+          "shifted_cost_inr": 634.2025192684737
+        },
+        {
+          "Datetime": "2024-12-31 13:00:00",
+          "horizon": 14,
+          "predicted_kw": 75.57345314878664,
+          "predicted_kwh": 75.57345314878664,
+          "lower_kw": 61.91116369731772,
+          "upper_kw": 89.23574260025556,
+          "baseline_kw": 75.57345314878664,
+          "shifted_kw": 75.57345314878664,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 604.5876251902931,
+          "shifted_cost_inr": 604.5876251902931
+        },
+        {
+          "Datetime": "2024-12-31 14:00:00",
+          "horizon": 15,
+          "predicted_kw": 75.7060583086147,
+          "predicted_kwh": 75.7060583086147,
+          "lower_kw": 62.04376885714578,
+          "upper_kw": 89.36834776008362,
+          "baseline_kw": 75.7060583086147,
+          "shifted_kw": 75.7060583086147,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 605.6484664689176,
+          "shifted_cost_inr": 605.6484664689176
+        },
+        {
+          "Datetime": "2024-12-31 15:00:00",
+          "horizon": 16,
+          "predicted_kw": 83.68631074831124,
+          "predicted_kwh": 83.68631074831124,
+          "lower_kw": 70.02402129684232,
+          "upper_kw": 97.34860019978017,
+          "baseline_kw": 83.68631074831124,
+          "shifted_kw": 83.68631074831124,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 669.49048598649,
+          "shifted_cost_inr": 669.49048598649
+        },
+        {
+          "Datetime": "2024-12-31 16:00:00",
+          "horizon": 17,
+          "predicted_kw": 96.22942324295748,
+          "predicted_kwh": 96.22942324295748,
+          "lower_kw": 82.56713379148856,
+          "upper_kw": 109.8917126944264,
+          "baseline_kw": 96.22942324295748,
+          "shifted_kw": 96.22942324295748,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 769.8353859436598,
+          "shifted_cost_inr": 769.8353859436598
+        },
+        {
+          "Datetime": "2024-12-31 17:00:00",
+          "horizon": 18,
+          "predicted_kw": 114.79430944254169,
+          "predicted_kwh": 114.79430944254169,
+          "lower_kw": 101.13201999107277,
+          "upper_kw": 128.4565988940106,
+          "baseline_kw": 114.79430944254169,
+          "shifted_kw": 103.31487849828753,
+          "rate_inr_per_kwh": 12.0,
+          "baseline_cost_inr": 1377.5317133105002,
+          "shifted_cost_inr": 1239.7785419794504
+        },
+        {
+          "Datetime": "2024-12-31 18:00:00",
+          "horizon": 19,
+          "predicted_kw": 127.4099134322845,
+          "predicted_kwh": 127.4099134322845,
+          "lower_kw": 113.74762398081558,
+          "upper_kw": 141.07220288375342,
+          "baseline_kw": 127.4099134322845,
+          "shifted_kw": 114.66892208905605,
+          "rate_inr_per_kwh": 12.0,
+          "baseline_cost_inr": 1528.918961187414,
+          "shifted_cost_inr": 1376.0270650686725
+        },
+        {
+          "Datetime": "2024-12-31 19:00:00",
+          "horizon": 20,
+          "predicted_kw": 131.9643768324111,
+          "predicted_kwh": 131.9643768324111,
+          "lower_kw": 118.30208738094217,
+          "upper_kw": 145.62666628388,
+          "baseline_kw": 131.9643768324111,
+          "shifted_kw": 118.76793914916998,
+          "rate_inr_per_kwh": 12.0,
+          "baseline_cost_inr": 1583.5725219889332,
+          "shifted_cost_inr": 1425.2152697900397
+        },
+        {
+          "Datetime": "2024-12-31 20:00:00",
+          "horizon": 21,
+          "predicted_kw": 130.50619148247225,
+          "predicted_kwh": 130.50619148247225,
+          "lower_kw": 116.84390203100332,
+          "upper_kw": 144.16848093394117,
+          "baseline_kw": 130.50619148247225,
+          "shifted_kw": 117.45557233422502,
+          "rate_inr_per_kwh": 12.0,
+          "baseline_cost_inr": 1566.074297789667,
+          "shifted_cost_inr": 1409.4668680107002
+        },
+        {
+          "Datetime": "2024-12-31 21:00:00",
+          "horizon": 22,
+          "predicted_kw": 121.8311838237691,
+          "predicted_kwh": 121.8311838237691,
+          "lower_kw": 108.16889437230017,
+          "upper_kw": 135.49347327523802,
+          "baseline_kw": 121.8311838237691,
+          "shifted_kw": 109.64806544139219,
+          "rate_inr_per_kwh": 12.0,
+          "baseline_cost_inr": 1461.9742058852291,
+          "shifted_cost_inr": 1315.7767852967063
+        },
+        {
+          "Datetime": "2024-12-31 22:00:00",
+          "horizon": 23,
+          "predicted_kw": 111.14717523352235,
+          "predicted_kwh": 111.14717523352235,
+          "lower_kw": 97.48488578205342,
+          "upper_kw": 124.80946468499127,
+          "baseline_kw": 111.14717523352235,
+          "shifted_kw": 111.14717523352235,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 889.1774018681788,
+          "shifted_cost_inr": 889.1774018681788
+        },
+        {
+          "Datetime": "2024-12-31 23:00:00",
+          "horizon": 24,
+          "predicted_kw": 108.08172551280728,
+          "predicted_kwh": 108.08172551280728,
+          "lower_kw": 94.41943606133836,
+          "upper_kw": 121.7440149642762,
+          "baseline_kw": 108.08172551280728,
+          "shifted_kw": 108.08172551280728,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 864.6538041024583,
+          "shifted_cost_inr": 864.6538041024583
+        }
+      ]
+    }
+  },
+  "uci": {
+    "forecast_request": {
+      "method": "POST",
+      "path": "/predict",
+      "body": {
+        "dataset": "uci",
+        "hours": 24
+      }
+    },
+    "forecast_response": {
+      "dataset": "uci",
+      "model": "random_forest",
+      "cutoff": "2010-11-26 20:00:00",
+      "hours": 24,
+      "unit": "kW (hour-average); kWh for each one-hour interval",
+      "total_kwh": 31.29867082548382,
+      "peak_kw": 2.5297291091820187,
+      "peak_time": "2010-11-27 20:00:00",
+      "band_note": "Empirical validation error band; only first 24 h, not guaranteed coverage.",
+      "source_type": "public_measured",
+      "predictions": [
+        {
+          "Datetime": "2010-11-26 21:00:00",
+          "horizon": 1,
+          "predicted_kw": 1.3561069356589146,
+          "predicted_kwh": 1.3561069356589146,
+          "lower_kw": 0.40549705541464176,
+          "upper_kw": 2.3067168159031874
+        },
+        {
+          "Datetime": "2010-11-26 22:00:00",
+          "horizon": 2,
+          "predicted_kw": 1.2193486154057616,
+          "predicted_kwh": 1.2193486154057616,
+          "lower_kw": 0.2687387351614887,
+          "upper_kw": 2.169958495650034
+        },
+        {
+          "Datetime": "2010-11-26 23:00:00",
+          "horizon": 3,
+          "predicted_kw": 0.6430773528284043,
+          "predicted_kwh": 0.6430773528284043,
+          "lower_kw": 0.0,
+          "upper_kw": 1.5936872330726772
+        },
+        {
+          "Datetime": "2010-11-27 00:00:00",
+          "horizon": 4,
+          "predicted_kw": 0.4687952471049793,
+          "predicted_kwh": 0.4687952471049793,
+          "lower_kw": 0.0,
+          "upper_kw": 1.419405127349252
+        },
+        {
+          "Datetime": "2010-11-27 01:00:00",
+          "horizon": 5,
+          "predicted_kw": 0.4847522924502204,
+          "predicted_kwh": 0.4847522924502204,
+          "lower_kw": 0.0,
+          "upper_kw": 1.4353621726944932
+        },
+        {
+          "Datetime": "2010-11-27 02:00:00",
+          "horizon": 6,
+          "predicted_kw": 0.4976326630137176,
+          "predicted_kwh": 0.4976326630137176,
+          "lower_kw": 0.0,
+          "upper_kw": 1.4482425432579904
+        },
+        {
+          "Datetime": "2010-11-27 03:00:00",
+          "horizon": 7,
+          "predicted_kw": 0.5014905035426835,
+          "predicted_kwh": 0.5014905035426835,
+          "lower_kw": 0.0,
+          "upper_kw": 1.4521003837869564
+        },
+        {
+          "Datetime": "2010-11-27 04:00:00",
+          "horizon": 8,
+          "predicted_kw": 0.5138067243551772,
+          "predicted_kwh": 0.5138067243551772,
+          "lower_kw": 0.0,
+          "upper_kw": 1.46441660459945
+        },
+        {
+          "Datetime": "2010-11-27 05:00:00",
+          "horizon": 9,
+          "predicted_kw": 0.5955642572722777,
+          "predicted_kwh": 0.5955642572722777,
+          "lower_kw": 0.0,
+          "upper_kw": 1.5461741375165505
+        },
+        {
+          "Datetime": "2010-11-27 06:00:00",
+          "horizon": 10,
+          "predicted_kw": 0.9882439146632145,
+          "predicted_kwh": 0.9882439146632145,
+          "lower_kw": 0.03763403441894164,
+          "upper_kw": 1.9388537949074873
+        },
+        {
+          "Datetime": "2010-11-27 07:00:00",
+          "horizon": 11,
+          "predicted_kw": 2.4669587471391057,
+          "predicted_kwh": 2.4669587471391057,
+          "lower_kw": 1.5163488668948328,
+          "upper_kw": 3.4175686273833783
+        },
+        {
+          "Datetime": "2010-11-27 08:00:00",
+          "horizon": 12,
+          "predicted_kw": 1.8902930506413238,
+          "predicted_kwh": 1.8902930506413238,
+          "lower_kw": 0.939683170397051,
+          "upper_kw": 2.840902930885597
+        },
+        {
+          "Datetime": "2010-11-27 09:00:00",
+          "horizon": 13,
+          "predicted_kw": 1.6970380635724742,
+          "predicted_kwh": 1.6970380635724742,
+          "lower_kw": 0.7464281833282014,
+          "upper_kw": 2.647647943816747
+        },
+        {
+          "Datetime": "2010-11-27 10:00:00",
+          "horizon": 14,
+          "predicted_kw": 1.5935886309256317,
+          "predicted_kwh": 1.5935886309256317,
+          "lower_kw": 0.6429787506813589,
+          "upper_kw": 2.5441985111699044
+        },
+        {
+          "Datetime": "2010-11-27 11:00:00",
+          "horizon": 15,
+          "predicted_kw": 1.6354954056382107,
+          "predicted_kwh": 1.6354954056382107,
+          "lower_kw": 0.6848855253939379,
+          "upper_kw": 2.586105285882484
+        },
+        {
+          "Datetime": "2010-11-27 12:00:00",
+          "horizon": 16,
+          "predicted_kw": 1.5622519121462308,
+          "predicted_kwh": 1.5622519121462308,
+          "lower_kw": 0.611642031901958,
+          "upper_kw": 2.5128617923905034
+        },
+        {
+          "Datetime": "2010-11-27 13:00:00",
+          "horizon": 17,
+          "predicted_kw": 1.4059196144831,
+          "predicted_kwh": 1.4059196144831,
+          "lower_kw": 0.45530973423882726,
+          "upper_kw": 2.356529494727373
+        },
+        {
+          "Datetime": "2010-11-27 14:00:00",
+          "horizon": 18,
+          "predicted_kw": 1.2713067352193352,
+          "predicted_kwh": 1.2713067352193352,
+          "lower_kw": 0.3206968549750624,
+          "upper_kw": 2.2219166154636083
+        },
+        {
+          "Datetime": "2010-11-27 15:00:00",
+          "horizon": 19,
+          "predicted_kw": 1.1628964415180432,
+          "predicted_kwh": 1.1628964415180432,
+          "lower_kw": 0.21228656127377032,
+          "upper_kw": 2.113506321762316
+        },
+        {
+          "Datetime": "2010-11-27 16:00:00",
+          "horizon": 20,
+          "predicted_kw": 1.1337664245478023,
+          "predicted_kwh": 1.1337664245478023,
+          "lower_kw": 0.18315654430352946,
+          "upper_kw": 2.084376304792075
+        },
+        {
+          "Datetime": "2010-11-27 17:00:00",
+          "horizon": 21,
+          "predicted_kw": 1.3788741328252758,
+          "predicted_kwh": 1.3788741328252758,
+          "lower_kw": 0.428264252581003,
+          "upper_kw": 2.329484013069549
+        },
+        {
+          "Datetime": "2010-11-27 18:00:00",
+          "horizon": 22,
+          "predicted_kw": 1.9213079863329947,
+          "predicted_kwh": 1.9213079863329947,
+          "lower_kw": 0.9706981060887219,
+          "upper_kw": 2.8719178665772676
+        },
+        {
+          "Datetime": "2010-11-27 19:00:00",
+          "horizon": 23,
+          "predicted_kw": 2.3804260650169233,
+          "predicted_kwh": 2.3804260650169233,
+          "lower_kw": 1.4298161847726505,
+          "upper_kw": 3.3310359452611964
+        },
+        {
+          "Datetime": "2010-11-27 20:00:00",
+          "horizon": 24,
+          "predicted_kw": 2.5297291091820187,
+          "predicted_kwh": 2.5297291091820187,
+          "lower_kw": 1.5791192289377458,
+          "upper_kw": 3.4803389894262917
+        }
+      ]
+    },
+    "simulation_response": {
+      "dataset": "uci",
+      "result": {
+        "label": "HYPOTHETICAL forecast-based 24-hour load-shifting scenario",
+        "settings": {
+          "offpeak_rate": 5.0,
+          "standard_rate": 8.0,
+          "peak_rate": 12.0,
+          "flexible_fraction": 0.1,
+          "carbon_factor_kg_per_kwh": 0.7,
+          "peak_hours": [
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "offpeak_hours": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "window_start": "2010-11-26 21:00:00",
+        "window_end": "2010-11-27 20:00:00",
+        "baseline_energy_kwh": 31.29867082548382,
+        "shifted_energy_kwh": 31.29867082548382,
+        "requested_shift_kwh": 0.9566444229016129,
+        "moved_energy_kwh": 0.9566444229016129,
+        "baseline_peak_kw": 2.5297291091820187,
+        "shifted_peak_kw": 2.4669587471391057,
+        "baseline_cost_inr": 279.4690184567179,
+        "shifted_cost_inr": 272.7725074964066,
+        "hypothetical_savings_inr": 6.6965109603112865,
+        "hypothetical_savings_pct": 2.3961550361792225,
+        "baseline_emissions_kg": 21.909069577838675,
+        "shifted_emissions_kg": 21.909069577838675,
+        "emissions_reduction_kg": 0.0,
+        "assumptions": [
+          "Illustrative INR time-of-use rates; not a real utility tariff or billing quote.",
+          "10% of peak-hour forecast load flexible by default; configurable 0-50%.",
+          "Pre-scheduling/deferral allowed anywhere inside this 24-hour window.",
+          "All shifted load fits original forecast peak headroom; no equipment constraints modeled.",
+          "No demand charges, taxes, rebound, discomfort or forecast error in cost calculation.",
+          "Constant illustrative carbon intensity: shifting preserves energy and does NOT reduce modeled emissions.",
+          "Savings are simulated, not measured or guaranteed."
+        ]
+      },
+      "hourly": [
+        {
+          "Datetime": "2010-11-26 21:00:00",
+          "horizon": 1,
+          "predicted_kw": 1.3561069356589146,
+          "predicted_kwh": 1.3561069356589146,
+          "lower_kw": 0.40549705541464176,
+          "upper_kw": 2.3067168159031874,
+          "baseline_kw": 1.3561069356589146,
+          "shifted_kw": 1.2204962420930232,
+          "rate_inr_per_kwh": 12.0,
+          "baseline_cost_inr": 16.273283227906976,
+          "shifted_cost_inr": 14.645954905116279
+        },
+        {
+          "Datetime": "2010-11-26 22:00:00",
+          "horizon": 2,
+          "predicted_kw": 1.2193486154057616,
+          "predicted_kwh": 1.2193486154057616,
+          "lower_kw": 0.2687387351614887,
+          "upper_kw": 2.169958495650034,
+          "baseline_kw": 1.2193486154057616,
+          "shifted_kw": 1.2193486154057616,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 9.754788923246092,
+          "shifted_cost_inr": 9.754788923246092
+        },
+        {
+          "Datetime": "2010-11-26 23:00:00",
+          "horizon": 3,
+          "predicted_kw": 0.6430773528284043,
+          "predicted_kwh": 0.6430773528284043,
+          "lower_kw": 0.0,
+          "upper_kw": 1.5936872330726772,
+          "baseline_kw": 0.6430773528284043,
+          "shifted_kw": 0.6430773528284043,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 5.144618822627234,
+          "shifted_cost_inr": 5.144618822627234
+        },
+        {
+          "Datetime": "2010-11-27 00:00:00",
+          "horizon": 4,
+          "predicted_kw": 0.4687952471049793,
+          "predicted_kwh": 0.4687952471049793,
+          "lower_kw": 0.0,
+          "upper_kw": 1.419405127349252,
+          "baseline_kw": 0.4687952471049793,
+          "shifted_kw": 0.6315161702124428,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 2.3439762355248965,
+          "shifted_cost_inr": 3.157580851062214
+        },
+        {
+          "Datetime": "2010-11-27 01:00:00",
+          "horizon": 5,
+          "predicted_kw": 0.4847522924502204,
+          "predicted_kwh": 0.4847522924502204,
+          "lower_kw": 0.0,
+          "upper_kw": 1.4353621726944932,
+          "baseline_kw": 0.4847522924502204,
+          "shifted_kw": 0.6462133278939292,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 2.423761462251102,
+          "shifted_cost_inr": 3.231066639469646
+        },
+        {
+          "Datetime": "2010-11-27 02:00:00",
+          "horizon": 6,
+          "predicted_kw": 0.4976326630137176,
+          "predicted_kwh": 0.4976326630137176,
+          "lower_kw": 0.0,
+          "upper_kw": 1.4482425432579904,
+          "baseline_kw": 0.4976326630137176,
+          "shifted_kw": 0.6580767294868908,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 2.4881633150685882,
+          "shifted_cost_inr": 3.290383647434454
+        },
+        {
+          "Datetime": "2010-11-27 03:00:00",
+          "horizon": 7,
+          "predicted_kw": 0.5014905035426835,
+          "predicted_kwh": 0.5014905035426835,
+          "lower_kw": 0.0,
+          "upper_kw": 1.4521003837869564,
+          "baseline_kw": 0.5014905035426835,
+          "shifted_kw": 0.6616299744227492,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 2.5074525177134177,
+          "shifted_cost_inr": 3.308149872113746
+        },
+        {
+          "Datetime": "2010-11-27 04:00:00",
+          "horizon": 8,
+          "predicted_kw": 0.5138067243551772,
+          "predicted_kwh": 0.5138067243551772,
+          "lower_kw": 0.0,
+          "upper_kw": 1.46441660459945,
+          "baseline_kw": 0.5138067243551772,
+          "shifted_kw": 0.6729737686781943,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 2.569033621775886,
+          "shifted_cost_inr": 3.3648688433909713
+        },
+        {
+          "Datetime": "2010-11-27 05:00:00",
+          "horizon": 9,
+          "predicted_kw": 0.5955642572722777,
+          "predicted_kwh": 0.5955642572722777,
+          "lower_kw": 0.0,
+          "upper_kw": 1.5461741375165505,
+          "baseline_kw": 0.5955642572722777,
+          "shifted_kw": 0.7482761399464626,
+          "rate_inr_per_kwh": 5.0,
+          "baseline_cost_inr": 2.9778212863613884,
+          "shifted_cost_inr": 3.741380699732313
+        },
+        {
+          "Datetime": "2010-11-27 06:00:00",
+          "horizon": 10,
+          "predicted_kw": 0.9882439146632145,
+          "predicted_kwh": 0.9882439146632145,
+          "lower_kw": 0.03763403441894164,
+          "upper_kw": 1.9388537949074873,
+          "baseline_kw": 0.9882439146632145,
+          "shifted_kw": 0.9882439146632145,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 7.905951317305716,
+          "shifted_cost_inr": 7.905951317305716
+        },
+        {
+          "Datetime": "2010-11-27 07:00:00",
+          "horizon": 11,
+          "predicted_kw": 2.4669587471391057,
+          "predicted_kwh": 2.4669587471391057,
+          "lower_kw": 1.5163488668948328,
+          "upper_kw": 3.4175686273833783,
+          "baseline_kw": 2.4669587471391057,
+          "shifted_kw": 2.4669587471391057,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 19.735669977112845,
+          "shifted_cost_inr": 19.735669977112845
+        },
+        {
+          "Datetime": "2010-11-27 08:00:00",
+          "horizon": 12,
+          "predicted_kw": 1.8902930506413238,
+          "predicted_kwh": 1.8902930506413238,
+          "lower_kw": 0.939683170397051,
+          "upper_kw": 2.840902930885597,
+          "baseline_kw": 1.8902930506413238,
+          "shifted_kw": 1.8902930506413238,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 15.12234440513059,
+          "shifted_cost_inr": 15.12234440513059
+        },
+        {
+          "Datetime": "2010-11-27 09:00:00",
+          "horizon": 13,
+          "predicted_kw": 1.6970380635724742,
+          "predicted_kwh": 1.6970380635724742,
+          "lower_kw": 0.7464281833282014,
+          "upper_kw": 2.647647943816747,
+          "baseline_kw": 1.6970380635724742,
+          "shifted_kw": 1.6970380635724742,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 13.576304508579794,
+          "shifted_cost_inr": 13.576304508579794
+        },
+        {
+          "Datetime": "2010-11-27 10:00:00",
+          "horizon": 14,
+          "predicted_kw": 1.5935886309256317,
+          "predicted_kwh": 1.5935886309256317,
+          "lower_kw": 0.6429787506813589,
+          "upper_kw": 2.5441985111699044,
+          "baseline_kw": 1.5935886309256317,
+          "shifted_kw": 1.5935886309256317,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 12.748709047405054,
+          "shifted_cost_inr": 12.748709047405054
+        },
+        {
+          "Datetime": "2010-11-27 11:00:00",
+          "horizon": 15,
+          "predicted_kw": 1.6354954056382107,
+          "predicted_kwh": 1.6354954056382107,
+          "lower_kw": 0.6848855253939379,
+          "upper_kw": 2.586105285882484,
+          "baseline_kw": 1.6354954056382107,
+          "shifted_kw": 1.6354954056382107,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 13.083963245105686,
+          "shifted_cost_inr": 13.083963245105686
+        },
+        {
+          "Datetime": "2010-11-27 12:00:00",
+          "horizon": 16,
+          "predicted_kw": 1.5622519121462308,
+          "predicted_kwh": 1.5622519121462308,
+          "lower_kw": 0.611642031901958,
+          "upper_kw": 2.5128617923905034,
+          "baseline_kw": 1.5622519121462308,
+          "shifted_kw": 1.5622519121462308,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 12.498015297169847,
+          "shifted_cost_inr": 12.498015297169847
+        },
+        {
+          "Datetime": "2010-11-27 13:00:00",
+          "horizon": 17,
+          "predicted_kw": 1.4059196144831,
+          "predicted_kwh": 1.4059196144831,
+          "lower_kw": 0.45530973423882726,
+          "upper_kw": 2.356529494727373,
+          "baseline_kw": 1.4059196144831,
+          "shifted_kw": 1.4059196144831,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 11.2473569158648,
+          "shifted_cost_inr": 11.2473569158648
+        },
+        {
+          "Datetime": "2010-11-27 14:00:00",
+          "horizon": 18,
+          "predicted_kw": 1.2713067352193352,
+          "predicted_kwh": 1.2713067352193352,
+          "lower_kw": 0.3206968549750624,
+          "upper_kw": 2.2219166154636083,
+          "baseline_kw": 1.2713067352193352,
+          "shifted_kw": 1.2713067352193352,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 10.170453881754682,
+          "shifted_cost_inr": 10.170453881754682
+        },
+        {
+          "Datetime": "2010-11-27 15:00:00",
+          "horizon": 19,
+          "predicted_kw": 1.1628964415180432,
+          "predicted_kwh": 1.1628964415180432,
+          "lower_kw": 0.21228656127377032,
+          "upper_kw": 2.113506321762316,
+          "baseline_kw": 1.1628964415180432,
+          "shifted_kw": 1.1628964415180432,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 9.303171532144345,
+          "shifted_cost_inr": 9.303171532144345
+        },
+        {
+          "Datetime": "2010-11-27 16:00:00",
+          "horizon": 20,
+          "predicted_kw": 1.1337664245478023,
+          "predicted_kwh": 1.1337664245478023,
+          "lower_kw": 0.18315654430352946,
+          "upper_kw": 2.084376304792075,
+          "baseline_kw": 1.1337664245478023,
+          "shifted_kw": 1.1337664245478023,
+          "rate_inr_per_kwh": 8.0,
+          "baseline_cost_inr": 9.070131396382418,
+          "shifted_cost_inr": 9.070131396382418
+        },
+        {
+          "Datetime": "2010-11-27 17:00:00",
+          "horizon": 21,
+          "predicted_kw": 1.3788741328252758,
+          "predicted_kwh": 1.3788741328252758,
+          "lower_kw": 0.428264252581003,
+          "upper_kw": 2.329484013069549,
+          "baseline_kw": 1.3788741328252758,
+          "shifted_kw": 1.2409867195427482,
+          "rate_inr_per_kwh": 12.0,
+          "baseline_cost_inr": 16.54648959390331,
+          "shifted_cost_inr": 14.891840634512977
+        },
+        {
+          "Datetime": "2010-11-27 18:00:00",
+          "horizon": 22,
+          "predicted_kw": 1.9213079863329947,
+          "predicted_kwh": 1.9213079863329947,
+          "lower_kw": 0.9706981060887219,
+          "upper_kw": 2.8719178665772676,
+          "baseline_kw": 1.9213079863329947,
+          "shifted_kw": 1.7291771876996953,
+          "rate_inr_per_kwh": 12.0,
+          "baseline_cost_inr": 23.055695835995937,
+          "shifted_cost_inr": 20.750126252396342
+        },
+        {
+          "Datetime": "2010-11-27 19:00:00",
+          "horizon": 23,
+          "predicted_kw": 2.3804260650169233,
+          "predicted_kwh": 2.3804260650169233,
+          "lower_kw": 1.4298161847726505,
+          "upper_kw": 3.3310359452611964,
+          "baseline_kw": 2.3804260650169233,
+          "shifted_kw": 2.142383458515231,
+          "rate_inr_per_kwh": 12.0,
+          "baseline_cost_inr": 28.56511278020308,
+          "shifted_cost_inr": 25.70860150218277
+        },
+        {
+          "Datetime": "2010-11-27 20:00:00",
+          "horizon": 24,
+          "predicted_kw": 2.5297291091820187,
+          "predicted_kwh": 2.5297291091820187,
+          "lower_kw": 1.5791192289377458,
+          "upper_kw": 3.4803389894262917,
+          "baseline_kw": 2.5297291091820187,
+          "shifted_kw": 2.2767561982638167,
+          "rate_inr_per_kwh": 12.0,
+          "baseline_cost_inr": 30.356749310184224,
+          "shifted_cost_inr": 27.3210743791658
+        }
+      ]
+    }
+  },
+  "invalid_hour_day_response": {
+    "error": "invalid_request",
+    "message": "Only dataset and hours are accepted. Forecasts require saved lag history, not arbitrary hour/day inputs."
+  }
+}

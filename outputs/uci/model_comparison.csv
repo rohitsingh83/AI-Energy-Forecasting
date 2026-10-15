@@ -1,0 +1,7 @@
+model,label,selected,validation_one_step_rmse_kw,validation_day_ahead_rmse_kw,test_one_step_rmse_kw,test_one_step_mae_kw,test_one_step_r2,test_day_ahead_rmse_kw,test_day_ahead_mae_kw,test_day_ahead_r2,test_day_ahead_wape_pct,fit_seconds_train_val
+previous_hour,Previous-hour baseline,False,0.692242,1.094988,0.584330,0.385728,0.319407,0.920003,0.677399,-0.767231,73.188674,0.000001
+same_hour_yesterday,Yesterday baseline,False,0.961264,0.893262,0.756890,0.510386,-0.141924,0.815788,0.562650,-0.389535,60.790846,0.000042
+same_hour_last_week,Last-week baseline,False,0.874014,0.788980,0.795216,0.550132,-0.260498,0.849653,0.571597,-0.507294,61.757497,0.000001
+ridge,Ridge regression,False,0.585325,0.671211,0.499231,0.352231,0.503208,0.629152,0.449621,0.173533,48.578709,0.010695
+random_forest,Random forest,True,0.538125,0.588666,0.466020,0.321540,0.567106,0.598233,0.448309,0.252768,48.436997,10.332179
+mlp,MLP neural network,False,0.570006,0.627643,0.495170,0.348114,0.511257,0.568668,0.413342,0.324801,44.659034,8.609211

@@ -1,0 +1,99 @@
+{
+  "run_id": "uci",
+  "selected_model": "random_forest",
+  "selected_model_label": "Random forest",
+  "source": {
+    "source_type": "public_measured",
+    "title": "UCI Individual Household Electric Power Consumption",
+    "creators": "Georges Hebrail and Alice Berard",
+    "source_url": "https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption",
+    "doi": "10.24432/C58K54",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "location": "One household in Sceaux, France",
+    "raw_minute_rows": 2075259,
+    "hourly_rows": 34589,
+    "minimum_observed_minutes_per_hour": 54,
+    "archive_sha256": "9f84b46ade8a2d8e1286ec4b2b6c2987a45a755c59f263be3b3b3d10dfbda3ff",
+    "hourly_sha256": "ab04febb691833420044cb47354c8466d1a2f2e0f366bc02eddcef4106f53b3c",
+    "transformation": "Hour-average of Global_active_power (kW); <54 valid minutes => missing.",
+    "timezone": "Original local calendar labels; timezone/DST not reconstructed.",
+    "warning": "Historical single-household benchmark, not current grid or corporate data.",
+    "input_sha256": "ab04febb691833420044cb47354c8466d1a2f2e0f366bc02eddcef4106f53b3c",
+    "input_file": "uci_household_hourly.csv"
+  },
+  "seed": 42,
+  "quick_mode": false,
+  "selection_rule": "Minimum validation day-ahead RMSE, chosen BEFORE test evaluation.",
+  "features": [
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "doy_sin",
+    "doy_cos",
+    "is_weekend",
+    "lag_1",
+    "lag_2",
+    "lag_24",
+    "lag_48",
+    "lag_168",
+    "rolling_mean_24",
+    "rolling_std_24",
+    "rolling_mean_168"
+  ],
+  "splits": {
+    "train": {
+      "rows": 22841,
+      "start": "2006-12-23 18:00:00",
+      "end": "2009-09-04 13:00:00"
+    },
+    "validation": {
+      "rows": 4895,
+      "start": "2009-09-04 14:00:00",
+      "end": "2010-04-14 04:00:00"
+    },
+    "test": {
+      "rows": 4895,
+      "start": "2010-04-14 05:00:00",
+      "end": "2010-11-26 20:00:00"
+    }
+  },
+  "validation_day_ahead": {
+    "n": 336,
+    "mae_kw": 0.4396159343456391,
+    "rmse_kw": 0.5886659198586012,
+    "r2": 0.5282421157984893,
+    "mape_pct": 56.792718983782954,
+    "wape_pct": 36.55376884731609
+  },
+  "test_one_step": {
+    "n": 4895,
+    "mae_kw": 0.3215400434657406,
+    "rmse_kw": 0.46602045444382434,
+    "r2": 0.5671059344231916,
+    "mape_pct": 43.78455969152631,
+    "wape_pct": 33.4813885510204
+  },
+  "test_day_ahead": {
+    "n": 336,
+    "mae_kw": 0.4483092036043325,
+    "rmse_kw": 0.5982329287385594,
+    "r2": 0.25276779772507996,
+    "mape_pct": 75.15478303647234,
+    "wape_pct": 48.43699728971852
+  },
+  "test_backtest_origins": 14,
+  "test_backtest_horizon": 24,
+  "day_ahead_rmse_improvement_vs_weekly_baseline_pct": 29.590898469485516,
+  "validation_error_radius_kw": 0.9506098802442728,
+  "empirical_test_band_coverage_pct": 90.17857142857143,
+  "band_note": "90th percentile absolute validation day-ahead error, pooled across horizons; no guaranteed coverage.",
+  "evaluation_note": "One-step uses arriving actual lags; day-ahead recursively uses its own predictions. Metrics exclude imputed targets.",
+  "limitations": [
+    "Single site / synthetic data cannot establish grid reliability or realized savings.",
+    "Only 14 or fewer daily origins per split, sampled evenly; not every test day.",
+    "No observed future temperature/occupancy is used.",
+    "UTC/DST/holiday/weather integration and drift monitoring need production work."
+  ]
+}
