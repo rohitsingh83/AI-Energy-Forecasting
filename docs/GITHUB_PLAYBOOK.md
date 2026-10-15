@@ -6,7 +6,7 @@ invent a repo screenshot, CI badge, hosted demo or historical commit trail.
 
 ## 1. Repository identity — copy-paste ready
 
-**Name:** `ai-energy-consumption-forecasting`
+**Name:** `AI-Energy-Forecasting`
 
 **Description:**
 
@@ -69,14 +69,14 @@ From the extracted root folder (not `src`):
 ```bash
 git init
 git branch -M main
-git config user.name 'Your Real Name'
-git config user.email 'YOUR_VERIFIED_OR_GITHUB_NOREPLY_EMAIL'
+git config user.name 'Rohit Singh'
+git config user.email 'rohitsingh8389788@gmail.com'
 git status --short
 git add .
 git diff --cached --stat
-# Inspect before committing. Do not commit private data or credentials.
-git commit -m 'feat: add reproducible energy forecasting lab and evidence'
-git remote add origin https://github.com/YOUR_USERNAME/ai-energy-consumption-forecasting.git
+# Inspect before committing.
+git commit -m 'feat: complete AI energy forecasting platform and GitHub Pages showcase'
+git remote add origin https://github.com/rohitsingh83/AI-Energy-Forecasting.git
 git push -u origin main
 ```
 
@@ -160,8 +160,8 @@ file capitalization matches on GitHub. Avoid dozens of redundant images at the t
 5. Clone into a fresh location and test without bundled ignored models:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-energy-consumption-forecasting.git
-cd ai-energy-consumption-forecasting
+git clone https://github.com/rohitsingh83/AI-Energy-Forecasting.git
+cd AI-Energy-Forecasting
 python -m venv .venv
 # Activate using your OS-specific command.
 python -m pip install -r requirements.txt pytest==9.0.3

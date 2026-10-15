@@ -1044,7 +1044,7 @@ specified behaviors were checked within this project's scope.
 
 ## J1. Professional repository identity
 
-**Recommended name:** `ai-energy-consumption-forecasting`
+**Recommended name:** `AI-Energy-Forecasting`
 
 **Description:**
 
@@ -1075,14 +1075,13 @@ These are topical labels, not claims that any named company uses your repository
 cd AI-Energy-Forecasting
 git init
 git branch -M main
-git config user.name 'Your Real Name'
-git config user.email 'YOUR_VERIFIED_OR_NOREPLY_EMAIL'
+git config user.name 'Rohit Singh'
+git config user.email 'rohitsingh8389788@gmail.com'
 git status --short
 git add .
 git diff --cached --stat
-# Inspect files before committing. Remove private data/secrets if any.
-git commit -m 'feat: add reproducible energy forecasting lab and evidence'
-git remote add origin https://github.com/YOUR_USERNAME/ai-energy-consumption-forecasting.git
+git commit -m 'feat: complete AI energy forecasting platform and GitHub Pages showcase'
+git remote add origin https://github.com/rohitsingh83/AI-Energy-Forecasting.git
 git push -u origin main
 ```
 
