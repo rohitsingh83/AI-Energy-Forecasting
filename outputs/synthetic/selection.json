@@ -1,6 +1,6 @@
 {
   "model": "mlp",
   "selection_uses": "validation only",
-  "error_radius_kw": 13.662289451468922,
+  "error_radius_kw": 13.662289451463721,
   "coverage_target": 0.9
 }

@@ -28,3 +28,32 @@
 2026-10-15 13:42:21,009 | INFO | SIMULATION | moved 0.96 kWh | hypothetical savings INR 6.70 | energy conserved; modeled CO2 unchanged.
 2026-10-15 13:42:23,301 | INFO | FIGURES | actual_vs_predicted.png, data_quality.png, energy_history.png, feature_importance.png, forecast.png, model_comparison.png, residual_diagnostics.png, simulation.png, usage_patterns.png
 2026-10-15 13:42:23,301 | INFO | DONE | artifacts: outputs/uci | images/uci | models/uci
+2026-10-16 11:48:30,101 | INFO | Using cached public hourly dataset: C:\Users\Rohit Singh\OneDrive\Desktop\IITD PROJECTS\New folder\AI-Energy-Forecasting\data\raw\uci_household_hourly.csv
+2026-10-16 11:48:30,484 | INFO | DATA | uci: 34587 hours; 33 filled; 411 still missing.
+2026-10-16 11:48:31,990 | INFO | SPLIT | train=22841 | validation=4895 | test=4895 | features=15
+2026-10-16 11:48:31,991 | INFO | VALIDATE | Previous-hour baseline
+2026-10-16 11:48:32,433 | INFO | VALIDATION RESULT | previous_hour | one-step RMSE 0.692 | day-ahead RMSE 1.095 kW
+2026-10-16 11:48:32,434 | INFO | VALIDATE | Yesterday baseline
+2026-10-16 11:48:33,002 | INFO | VALIDATION RESULT | same_hour_yesterday | one-step RMSE 0.961 | day-ahead RMSE 0.893 kW
+2026-10-16 11:48:33,003 | INFO | VALIDATE | Last-week baseline
+2026-10-16 11:48:33,497 | INFO | VALIDATION RESULT | same_hour_last_week | one-step RMSE 0.874 | day-ahead RMSE 0.789 kW
+2026-10-16 11:48:33,498 | INFO | VALIDATE | Ridge regression
+2026-10-16 11:48:38,196 | INFO | VALIDATION RESULT | ridge | one-step RMSE 0.585 | day-ahead RMSE 0.671 kW
+2026-10-16 11:48:38,197 | INFO | VALIDATE | Random forest
+2026-10-16 11:49:02,902 | INFO | VALIDATION RESULT | random_forest | one-step RMSE 0.538 | day-ahead RMSE 0.598 kW
+2026-10-16 11:49:02,902 | INFO | VALIDATE | MLP neural network
+2026-10-16 11:49:22,292 | INFO | VALIDATION RESULT | mlp | one-step RMSE 0.570 | day-ahead RMSE 0.628 kW
+2026-10-16 11:49:22,295 | INFO | LOCKED SELECTION | random_forest (validation only). Test evaluation starts now.
+2026-10-16 11:49:22,317 | INFO | TEST | refit train+validation then evaluate previous_hour
+2026-10-16 11:49:23,188 | INFO | TEST | refit train+validation then evaluate same_hour_yesterday
+2026-10-16 11:49:23,968 | INFO | TEST | refit train+validation then evaluate same_hour_last_week
+2026-10-16 11:49:24,606 | INFO | TEST | refit train+validation then evaluate ridge
+2026-10-16 11:49:34,814 | INFO | TEST | refit train+validation then evaluate random_forest
+2026-10-16 11:50:05,724 | INFO | TEST | refit train+validation then evaluate mlp
+2026-10-16 11:50:42,232 | WARNING | mlp: Stochastic Optimizer: Maximum iterations (220) reached and the optimization hasn't converged yet.
+2026-10-16 11:50:50,783 | INFO | FINAL REFIT | random_forest on all 32631 eligible historical rows; reported test scores remain pre-refit.
+2026-10-16 11:51:06,070 | INFO | COMPLETE | random_forest | day-ahead RMSE 0.594 kW | R² 0.264 | 155.2s
+2026-10-16 11:51:11,816 | INFO | FORECAST | 24 hours after 2010-11-26 20:00:00 | 31.12 kWh | peak 2.45 kW
+2026-10-16 11:51:11,851 | INFO | SIMULATION | moved 0.93 kWh | hypothetical savings INR 6.54 | energy conserved; modeled CO2 unchanged.
+2026-10-16 11:51:22,517 | INFO | FIGURES | actual_vs_predicted.png, data_quality.png, energy_history.png, feature_importance.png, forecast.png, model_comparison.png, residual_diagnostics.png, simulation.png, usage_patterns.png
+2026-10-16 11:51:22,518 | INFO | DONE | artifacts: outputs/uci | images/uci | models/uci

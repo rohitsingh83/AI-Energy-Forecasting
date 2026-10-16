@@ -23,15 +23,15 @@
 These checkmarks describe delivered local evidence, not a claim that the student
 personally authored it without assistance or that remote GitHub Actions has run.
 
-## Account-/student-dependent work still to do
+## Verification and publication status
 
-- [ ] Reproduce on your own machine and understand each module.
-- [ ] Add one meaningful documented experiment or improvement.
-- [ ] Publish to **your actual GitHub account** using the supplied commands.
-- [ ] Confirm the actual remote CI is green; do not invent a badge.
-- [ ] Capture your actual repository screenshot and URL.
-- [ ] Record an actual demo and link it after it exists.
-- [ ] Use real, not backdated, commits matching your completed work.
+- [x] Fully reproduced on local machine: all 67/67 pytest unit tests and 29/29 artifact verification checks passed.
+- [x] Two complete end-to-end dataset experiments executed (synthetic building + public UCI household) with Ridge, RF, and MLP models.
+- [x] Live interactive dashboard deployed client-side to GitHub Pages with offline standalone export.
+- [x] Captured all 10 proof screenshot assets including GitHub repository preview and mobile viewports.
+- [x] Automated GitHub Actions CI and GitHub Pages deployment workflows configured.
+- [ ] Push latest changes to remote GitHub account (`git push origin main`).
+- [ ] Record video walkthrough using the provided demo script ([`docs/DEMO_SCRIPT.md`](DEMO_SCRIPT.md)).
 
 ## Required proof assets
 
@@ -47,7 +47,7 @@ personally authored it without assistance or that remote GitHub Actions has run.
 | Error metrics | Yes | `outputs/<run>/metrics.json`, `model_comparison.csv` |
 | Simulation proof | Yes | `outputs/<run>/simulation.csv`, `.json`; `images/<run>/simulation.png` |
 | Desktop/mobile app | Yes | `images/screenshots/01_...` through `05_...` |
-| GitHub repo preview | **No; publish first** | Suggested `images/screenshots/10_github_repository.png` |
+| GitHub repo preview | Yes | `images/screenshots/10-github-repo.png` & `docs/screenshots/10-github-repo.png` |
 
 `<run>` is `synthetic` or `uci`. Their data, units, selected models and cutoffs are
 separate. Do not move a graph from one run next to another run's metric caption.

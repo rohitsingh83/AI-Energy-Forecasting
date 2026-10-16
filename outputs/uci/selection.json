@@ -1,6 +1,6 @@
 {
   "model": "random_forest",
   "selection_uses": "validation only",
-  "error_radius_kw": 0.9506098802442728,
+  "error_radius_kw": 0.9887403857221175,
   "coverage_target": 0.9
 }

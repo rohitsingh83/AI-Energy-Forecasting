@@ -61,33 +61,33 @@
   },
   "validation_day_ahead": {
     "n": 336,
-    "mae_kw": 0.4396159343456391,
-    "rmse_kw": 0.5886659198586012,
-    "r2": 0.5282421157984893,
-    "mape_pct": 56.792718983782954,
-    "wape_pct": 36.55376884731609
+    "mae_kw": 0.4505771373079064,
+    "rmse_kw": 0.5982223379338244,
+    "r2": 0.5128007271419941,
+    "mape_pct": 57.77962910522652,
+    "wape_pct": 37.46518549095443
   },
   "test_one_step": {
     "n": 4895,
-    "mae_kw": 0.3215400434657406,
-    "rmse_kw": 0.46602045444382434,
-    "r2": 0.5671059344231916,
-    "mape_pct": 43.78455969152631,
-    "wape_pct": 33.4813885510204
+    "mae_kw": 0.321576872579832,
+    "rmse_kw": 0.4657741217448838,
+    "r2": 0.5675634584622367,
+    "mape_pct": 43.76740701234839,
+    "wape_pct": 33.48522350067579
   },
   "test_day_ahead": {
     "n": 336,
-    "mae_kw": 0.4483092036043325,
-    "rmse_kw": 0.5982329287385594,
-    "r2": 0.25276779772507996,
-    "mape_pct": 75.15478303647234,
-    "wape_pct": 48.43699728971852
+    "mae_kw": 0.4457093253511771,
+    "rmse_kw": 0.5936550922168209,
+    "r2": 0.2641600786426641,
+    "mape_pct": 74.7053620145887,
+    "wape_pct": 48.156096753014765
   },
   "test_backtest_origins": 14,
   "test_backtest_horizon": 24,
-  "day_ahead_rmse_improvement_vs_weekly_baseline_pct": 29.590898469485516,
-  "validation_error_radius_kw": 0.9506098802442728,
-  "empirical_test_band_coverage_pct": 90.17857142857143,
+  "day_ahead_rmse_improvement_vs_weekly_baseline_pct": 30.129687528002968,
+  "validation_error_radius_kw": 0.9887403857221175,
+  "empirical_test_band_coverage_pct": 92.55952380952381,
   "band_note": "90th percentile absolute validation day-ahead error, pooled across horizons; no guaranteed coverage.",
   "evaluation_note": "One-step uses arriving actual lags; day-ahead recursively uses its own predictions. Metrics exclude imputed targets.",
   "limitations": [
